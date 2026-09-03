@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flos 曜診所｜靜謐美學・台中南屯區</title>
+<link rel="icon" href="favicon.png" type="image/png">
+<style>
+@font-face {
+    font-family: SweiSpringCJKtc-Regular;
+    src: url(https://cdn.jsdelivr.net/gh/max32002/swei-spring@1.068/WebFont/CJK%20TC/SweiSpringCJKtc-Regular.woff2) format("woff2")
+    , url(https://cdn.jsdelivr.net/gh/max32002/swei-spring@1.068/WebFont/CJK%20TC/SweiSpringCJKtc-Regular.woff) format("woff");
+  }
+
+  :root{
+    --ink:#F1EADC;
+    --ink-soft:#C0C8C8;
+    --paper:#132728;
+    --paper-deep:#2B3C3C;
+    --line:#445150;
+    --gold:#FBFDFD;
+    --gold-deep:#C0C8C8;
+    --white:#445150;
+    --serif: "SweiSpringCJKtc-Regular", "Noto Serif TC", "Songti TC", serif;
+    --sans: "Noto Sans TC", "PingFang TC", sans-serif;
+    --maxw: 1180px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width: var(--maxw); margin:0 auto; padding: 0 40px;}
+  @media (max-width:760px){ .wrap{padding:0 24px;} }
+
+  /* -------- motion -------- */
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{
+      opacity:0; transform: translateY(18px);
+      transition: opacity .9s ease, transform .9s ease;
+    }
+    .reveal.in{opacity:1; transform:none;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none;}
+  }
+
+  /* -------- header -------- */
+  header{
+    position: fixed; top:0; left:0; right:0; z-index:50;
+    background: rgba(19,39,40,0.86);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .4s ease, background .4s ease;
+  }
+  header.scrolled{ border-bottom-color: var(--line); }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    height:78px;
+  }
+  .wordmark{
+    font-family: var(--serif); font-size: 21px; letter-spacing: 0.14em;
+    font-weight:600; display:flex; align-items:baseline; gap:8px;
+  }
+  .wordmark small{font-family:var(--sans); font-weight:400; font-size:12px; letter-spacing:0.28em; color:var(--ink-soft);}
+  nav.links{ display:flex; gap:40px; font-size:14px; letter-spacing:0.06em; align-items:center; }
+  nav.links a{ position:relative; padding:4px 0; }
+  nav.links a::after{
+    content:""; position:absolute; left:0; right:100%; bottom:-2px; height:1px;
+    background: var(--gold); transition: right .3s ease;
+  }
+  nav.links a:hover::after{ right:0; }
+  .cta-btn{
+    border:1px solid var(--ink); padding:10px 22px; font-size:13px;
+    letter-spacing:0.08em; border-radius:999px; white-space:nowrap;
+    transition: background .3s ease, color .3s ease, border-color .3s ease;
+  }
+  .cta-btn:hover{ background:var(--ink); color:var(--white); }
+  .cta-btn.solid{ background:var(--ink); color:var(--white); }
+  .cta-btn.solid:hover{ background:var(--gold-deep); border-color:var(--gold-deep); }
+  .menu-toggle{
+    display:none; font-size:24px; background:none; border:none; color:var(--ink);
+    line-height:1; padding:4px; cursor:pointer;
+  }
+  @media (max-width: 880px){
+    nav.links{ display:none; }
+    .menu-toggle{ display:block; }
+  }
+
+  /* -------- hero -------- */
+  .hero{
+    position:relative; min-height: 100svh; display:flex; flex-direction:column;
+    justify-content:center; padding-top:78px; overflow:hidden;
+  }
+  .hero-glow{
+    position:absolute; top:-20%; right:-10%; width:60vw; height:60vw; max-width:900px; max-height:900px;
+    background: radial-gradient(circle at 40% 40%, rgba(241,234,220,0.16), rgba(241,234,220,0) 68%);
+    filter: blur(4px); pointer-events:none;
+  }
+  .hero-inner{ position:relative; z-index:2; }
+  .eyebrow{
+    font-size:12.5px; letter-spacing:0.32em; color:var(--gold-deep); margin-bottom:26px;
+    display:flex; align-items:center; gap:14px;
+  }
+  .eyebrow .rule{ width:44px; height:1px; background:var(--gold-deep); display:inline-block; }
+  h1.display{
+    font-family: var(--serif); font-weight:600;
+    font-size: clamp(38px, 6vw, 74px);
+    line-height:1.28; letter-spacing:0.02em;
+    max-width: 780px;
+    color: var(--ink);
+  }
+  h1.display em{ font-style:normal; color: var(--gold-deep); }
+  .hero-sub{
+    margin-top:28px; max-width:520px; color:var(--ink-soft); font-size:16.5px; line-height:1.95;
+  }
+  .hero-actions{ margin-top:44px; display:flex; gap:16px; flex-wrap:wrap; }
+  .hero-meta{
+    position:absolute; right:40px; bottom:56px; z-index:2;
+    text-align:right; font-size:12.5px; letter-spacing:0.14em; color:var(--ink-soft);
+    display:flex; flex-direction:column; gap:6px;
+  }
+  @media (max-width:760px){ .hero-meta{ display:none; } }
+
+  /* -------- section shell -------- */
+  section{ padding: 128px 0; position:relative; }
+  @media (max-width:760px){ section{ padding:88px 0; } }
+  .section-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:64px; flex-wrap:wrap; }
+  .kicker{
+    font-family: var(--serif); font-size:13px; letter-spacing:0.3em; color:var(--gold-deep);
+    display:flex; align-items:center; gap:12px; margin-bottom:18px;
+  }
+  .kicker .num{ font-size:12px; color:var(--ink-soft); letter-spacing:0.1em; }
+  h2.title{
+    font-family: var(--serif); font-weight:600; font-size: clamp(28px,3.4vw,42px);
+    letter-spacing:0.01em; max-width:640px;
+  }
+  .section-note{ max-width:320px; color:var(--ink-soft); font-size:14.5px; line-height:1.9; }
+  hr.hair{ border:none; border-top:1px solid var(--line); }
+
+  /* -------- treatments -------- */
+  .treat-grid{
+    display:grid; grid-template-columns: repeat(3, 1fr); gap:1px;
+    background: var(--line); border:1px solid var(--line);
+  }
+  @media (max-width:900px){ .treat-grid{ grid-template-columns: repeat(2,1fr); } }
+  @media (max-width:560px){ .treat-grid{ grid-template-columns: 1fr; } }
+  .treat-card{
+    background: var(--paper); padding:38px 32px; min-height:230px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    transition: background .35s ease;
+  }
+  .treat-card:hover{ background: var(--white); }
+  .treat-tag{ font-size:12px; letter-spacing:0.16em; color:var(--ink-soft); }
+  .treat-name{ font-family:var(--serif); font-size:22px; margin-top:18px; font-weight:600; }
+  .treat-desc{ margin-top:10px; font-size:14px; color:var(--ink-soft); line-height:1.8; }
+  .treat-more{ margin-top:24px; font-size:13px; letter-spacing:0.1em; color:var(--gold-deep); display:inline-flex; align-items:center; gap:6px;}
+
+  /* -------- space / quiet section -------- */
+  .space-section{ background:var(--paper-deep); }
+  .space-grid{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap:70px; align-items:center; }
+  @media (max-width:880px){ .space-grid{ grid-template-columns:1fr; gap:40px; } }
+  .photo-block{
+    aspect-ratio: 4/5; border-radius:2px; position:relative; overflow:hidden;
+    background:
+      linear-gradient(160deg, rgba(192,200,200,0.20), rgba(19,39,40,0.08)),
+      repeating-linear-gradient(115deg, rgba(255,255,255,0.05) 0 2px, transparent 2px 26px),
+      var(--paper-deep);
+  }
+  .photo-block::after{
+    content:"實際空間攝影 — 建議替換為診所現場照片";
+    position:absolute; inset:auto 20px 20px 20px; color:rgba(255,255,255,0.72);
+    font-size:11.5px; letter-spacing:0.08em; line-height:1.6;
+  }
+  .space-copy p{ color:var(--ink-soft); margin-top:22px; font-size:15.5px; line-height:2; max-width:460px; }
+  .space-copy .stat-row{ display:flex; gap:48px; margin-top:44px; }
+  .stat-row div b{ font-family:var(--serif); font-size:30px; display:block; color:var(--ink); }
+  .stat-row div span{ font-size:12.5px; color:var(--ink-soft); letter-spacing:0.06em; }
+
+  /* -------- team -------- */
+  .team-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:48px; }
+  @media (max-width:880px){ .team-grid{ grid-template-columns: 1fr; gap:40px; } }
+  .team-card .photo-block{ aspect-ratio:3/4; margin-bottom:22px; background:
+      linear-gradient(160deg, rgba(192,200,200,0.16), rgba(19,39,40,0.05)),
+      var(--paper-deep); }
+  .team-card .photo-block::after{ content:"曜診所醫師｜文心館"; }
+  .team-name{ font-family:var(--serif); font-size:19px; font-weight:600; }
+  .team-role{ font-size:13px; color:var(--gold-deep); letter-spacing:0.08em; margin-top:6px; }
+  .team-desc{ font-size:14px; color:var(--ink-soft); margin-top:14px; line-height:1.85; }
+
+  /* -------- journal -------- */
+  .journal-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  @media (max-width:880px){ .journal-grid{ grid-template-columns:1fr; } }
+  .journal-card{ background:var(--paper); padding:36px 30px; }
+  .journal-cat{ font-size:11.5px; letter-spacing:0.14em; color:var(--gold-deep); }
+  .journal-title{ font-family:var(--serif); font-size:18.5px; margin-top:14px; line-height:1.6; font-weight:600; }
+  .journal-date{ font-size:12.5px; color:var(--ink-soft); margin-top:18px; }
+
+  /* -------- location / footer cta -------- */
+  .cta-band{
+    background: var(--ink); color: var(--paper);
+    padding:110px 0; text-align:center;
+  }
+  .cta-band h2{ font-family:var(--serif); font-size:clamp(26px,3.6vw,40px); font-weight:600; max-width:640px; margin:0 auto; }
+  .cta-band p{ color:rgba(19,39,40,0.68); margin-top:20px; font-size:15px; }
+  .cta-band .hero-actions{ justify-content:center; margin-top:40px; }
+  .cta-band .cta-btn{ border-color:rgba(19,39,40,0.5); }
+  .cta-band .cta-btn:hover{ background:var(--paper); color:var(--ink); }
+  .cta-band .cta-btn.solid{ background:var(--paper); border-color:var(--paper); color:var(--gold); }
+  .cta-band .cta-btn.solid:hover{ background:var(--gold-deep); border-color:var(--gold-deep); color:var(--white); }
+
+  footer{ padding:70px 0 40px; font-size:13.5px; color:var(--ink-soft); }
+  .foot-grid{ display:flex; justify-content:space-between; gap:40px; flex-wrap:wrap; padding-bottom:40px; border-bottom:1px solid var(--line); }
+  .foot-brand .wordmark{ margin-bottom:16px; }
+  .foot-cols{ display:flex; gap:64px; flex-wrap:wrap; }
+  .foot-col h4{ font-size:12.5px; letter-spacing:0.12em; color:var(--ink); margin-bottom:14px; }
+  .foot-col a, .foot-col p{ display:block; margin-bottom:9px; }
+  .foot-bottom{ display:flex; justify-content:space-between; padding-top:26px; flex-wrap:wrap; gap:12px; }
+  .socials{ display:flex; gap:16px; }
+
+  /* -------- branches slider -------- */
+  .branch-slider {
+    display: flex;
+    gap: 32px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px;
+    scrollbar-width: thin;
+  }
+  .branch-card {
+    min-width: 100%;
+    scroll-snap-align: start;
+    background: var(--paper-deep);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  @media (min-width: 880px) {
+    .branch-card { min-width: calc(50% - 16px); }
+  }
+  .branch-photo {
+    aspect-ratio: 16/9;
+    background: linear-gradient(160deg, rgba(192,200,200,0.20), rgba(19,39,40,0.08)), var(--paper-deep);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.72);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  /* -------- team slider -------- */
+  .team-slider {
+    display: flex;
+    gap: 32px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px;
+    scrollbar-width: thin;
+  }
+  .team-slider .team-card {
+    min-width: 100%;
+    scroll-snap-align: start;
+    background: var(--paper-deep);
+    border-radius: 4px;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+  @media (min-width: 880px) {
+    .team-slider .team-card {
+      min-width: calc(33.333% - 21.33px);
+    }
+  }
+  .team-card {
+    max-height: 520px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+
+  /* ==================================================================
+     導覽列下拉選單（桌機：hover 大選單／手機：點擊展開手風琴）
+     ================================================================== */
+  .nav-item.dropdown-mega { position: relative; }
+
+  .mega-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f5f0e6;
+    width: 750px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    padding: 35px 30px;
+    border-radius: 4px;
+    z-index: 999;
+  }
+  /* 桌機：滑鼠移到導覽列時顯示 */
+  @media (min-width: 881px){
+    .nav-item.dropdown-mega:hover .mega-menu { display: block; }
+  }
+
+  .mega-menu-container { display: flex; gap: 40px; }
+
+  .mega-sidebar {
+    width: 45%;
+    border-right: 1px solid rgba(0,0,0,0.08);
+    padding-right: 20px;
+  }
+  .category-list { list-style: none; padding: 0; margin: 0; }
+  .category-item {
+    font-size: 17px; color: #111; padding: 0; cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease; margin-bottom: 4px; border-radius: 2px; letter-spacing: 0.5px;
+  }
+  .category-item.active,
+  .category-item:hover { background-color: #112220; color: #fff; }
+
+  /* 分類列的可點擊按鈕（桌機／手機共用外觀，僅手機賦予展開行為） */
+  .category-toggle {
+    all: unset;
+    display: flex; align-items: center; justify-content: space-between;
+    width: 100%; box-sizing: border-box;
+    padding: 10px 14px; cursor: pointer;
+    font: inherit; color: inherit; letter-spacing: inherit;
+  }
+  .category-toggle:focus-visible { outline: 2px solid var(--gold-deep); outline-offset: 2px; }
+
+  .arrow-mobile{ display:none; }
+  .mobile-subpanel{ display:none; }
+
+  .mega-content { width: 55%; display: flex; flex-direction: column; justify-content: flex-start; }
+  .sub-category-pane { display: none; }
+  .sub-category-pane.active { display: flex; flex-direction: column; gap: 14px; }
+  .sub-item { font-size: 16px; color: #111; text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+  .sub-item:hover { color: #c5a059; }
+  .sub-name { display: block; }
+
+  /* ==================================================================
+     手機版導覽（單一、不衝突的版本）
+     ================================================================== */
+  @media (max-width: 880px) {
+    nav.links {
+      display: none;
+    }
+    nav.links.active {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      max-height: calc(100svh - 78px);
+      overflow-y: auto;
+      background: rgba(19, 39, 40, 0.98);
+      backdrop-filter: blur(10px);
+      padding: 20px 24px 28px;
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      gap: 18px;
+      box-sizing: border-box;
+    }
+
+    /* 手機版：療程項目改為「點擊展開」的手風琴，不再依賴 hover */
+    .nav-item.dropdown-mega { width: 100%; }
+    .nav-item.dropdown-mega > .nav-link {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .mega-menu {
+      position: static;
+      transform: none;
+      width: 100%;
+      max-width: none;
+      box-shadow: none;
+      background: transparent;
+      padding: 16px 0 0;
+      margin-top: 10px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+    .nav-item.dropdown-mega.mega-open .mega-menu { display: block; }
+
+    .mega-menu-container { flex-direction: column; gap: 8px; }
+    .mega-sidebar { width: 100%; border-right: none; border-bottom: none; padding-right: 0; padding-bottom: 0; }
+    .mega-content { display: none; } /* 手機版改用各分類自己底下的展開區塊，不用共用內容欄 */
+
+    .category-list { display: flex; flex-direction: column; gap: 2px; }
+    .category-item.active { background: none; color: #111; } /* 桌機用的預設 active 樣式，手機不套用 */
+    .category-item.mobile-open { background-color: #112220; color: #fff; }
+
+    .arrow-desktop{ display: none; }
+    .arrow-mobile{
+      display: inline-block; margin-left: 8px; flex-shrink: 0;
+      transition: transform .25s ease;
+    }
+    .category-item.mobile-open .arrow-mobile{ transform: rotate(180deg); }
+
+    .category-item.mobile-open > .mobile-subpanel {
+      display: flex; flex-direction: column; gap: 2px;
+      background: var(--paper-deep);
+      border-left: 3px solid var(--gold-deep);
+      padding: 6px 14px;
+      margin: 2px 0 6px;
+      border-radius: 0 0 4px 4px;
+    }
+    .mobile-subpanel .sub-item {
+      padding: 10px 4px;
+      font-size: 14.5px;
+      color: var(--ink);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .mobile-subpanel .sub-item:last-child{ border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="wrap nav">
+    <a href="#top" class="wordmark">FLOS <small>曜 診 所</small></a>
+    <nav class="links" id="primaryNav">
+      <!-- 導覽列：療程項目下拉選單 -->
+      <div class="nav-item dropdown-mega">
+        <a href="#treatments" class="nav-link">療程項目 <span class="dropdown-arrow" aria-hidden="true">▾</span></a>
+
+        <!-- 下拉大型選單容器 -->
+        <div class="mega-menu">
+          <div class="mega-menu-container">
+
+            <!-- 左側：大項目列表 -->
+            <div class="mega-sidebar">
+              <ul class="category-list">
+                <li class="category-item active" data-target="skin">
+                  <button type="button" class="category-toggle">
+                    <span class="category-label">肌膚管理</span>
+                    <span class="arrow-desktop" aria-hidden="true">➔</span>
+                    <span class="arrow-mobile" aria-hidden="true">▾</span>
+                  </button>
+                  <div class="mobile-subpanel">
+                    <a href="#dermapen" class="sub-item">Dermapen得美微針筆</a>
+                    <a href="#syndeo" class="sub-item">Syndeo海菲秀</a>
+                    <a href="#emfusion" class="sub-item">Emfusion</a>
+                    <a href="#jetpeel" class="sub-item">JetPeel潔比爾</a>
+                    <a href="#seyo" class="sub-item">SEYO水光儀</a>
+                    <a href="#smartlux" class="sub-item">SMARTLUX照光機</a>
+                    <a href="#curejet" class="sub-item">CUREJET酷捷</a>
+                  </div>
+                </li>
+                <li class="category-item" data-target="body">
+                  <button type="button" class="category-toggle">
+                    <span class="category-label">勻體方案</span>
+                    <span class="arrow-desktop" aria-hidden="true">➔</span>
+                    <span class="arrow-mobile" aria-hidden="true">▾</span>
+                  </button>
+                  <div class="mobile-subpanel">
+                    <a href="#inmode" class="sub-item">InMode LIFT鑽石超塑</a>
+                    <a href="#embody" class="sub-item">EMBODY核心美力</a>
+                    <a href="#emsculpt" class="sub-item">Emsculpt NEO 熱磁減脂</a>
+                    <a href="#indiba" class="sub-item">INDIBA英特波</a>
+                    <a href="#onda" class="sub-item">Onda PRO超微波</a>
+                    <a href="#winback" class="sub-item">Winback</a>
+                  </div>
+                </li>
+                <li class="category-item" data-target="youth">
+                  <button type="button" class="category-toggle">
+                    <span class="category-label">青春激戰</span>
+                    <span class="arrow-desktop" aria-hidden="true">➔</span>
+                    <span class="arrow-mobile" aria-hidden="true">▾</span>
+                  </button>
+                  <div class="mobile-subpanel">
+                    <a href="#iv" class="sub-item">營養點滴</a>
+                    <a href="#maxwave" class="sub-item">Maxwave極限震波</a>
+                  </div>
+                </li>
+                <li class="category-item" data-target="energy">
+                  <button type="button" class="category-toggle">
+                    <span class="category-label">電波、音波</span>
+                    <span class="arrow-desktop" aria-hidden="true">➔</span>
+                    <span class="arrow-mobile" aria-hidden="true">▾</span>
+                  </button>
+                  <div class="mobile-subpanel">
+                    <a href="#density" class="sub-item">DENSITY 無雙電波</a>
+                    <a href="#mpt" class="sub-item">Ultraformer MPT海芙音波媚必提</a>
+                    <a href="#ulthera" class="sub-item">Ultherapy Prime美國音波 第二代</a>
+                    <a href="#potenza" class="sub-item">Potenza 無限電波</a>
+                  </div>
+                </li>
+                <li class="category-item" data-target="laser">
+                  <button type="button" class="category-toggle">
+                    <span class="category-label">皮膚雷射</span>
+                    <span class="arrow-desktop" aria-hidden="true">➔</span>
+                    <span class="arrow-mobile" aria-hidden="true">▾</span>
+                  </button>
+                  <div class="mobile-subpanel">
+                    <a href="#capri" class="sub-item">Capri 藍雷射</a>
+                    <a href="#discovery" class="sub-item">Discovery Pico探索皮秒</a>
+                  </div>
+                </li>
+                <li class="category-item" data-target="botox">
+                  <button type="button" class="category-toggle">
+                    <span class="category-label">肉毒</span>
+                    <span class="arrow-desktop" aria-hidden="true">➔</span>
+                    <span class="arrow-mobile" aria-hidden="true">▾</span>
+                  </button>
+                  <div class="mobile-subpanel">
+                    <a href="#botox-brand" class="sub-item">Botox 保妥適</a>
+                    <a href="#xeomin" class="sub-item">Xeomin 天使肉毒</a>
+                    <a href="#nabota" class="sub-item">優力柔(奇肌肉毒)</a>
+                  </div>
+                </li>
+                <li class="category-item" data-target="colloids">
+                  <button type="button" class="category-toggle">
+                    <span class="category-label">膠原蛋白增生劑</span>
+                    <span class="arrow-desktop" aria-hidden="true">➔</span>
+                    <span class="arrow-mobile" aria-hidden="true">▾</span>
+                  </button>
+                  <div class="mobile-subpanel">
+                    <a href="#aesthefill" class="sub-item">AestheFill 艾麗斯</a>
+                    <a href="#juvelook" class="sub-item">Juvelook喬雅露</a>
+                    <a href="#radiesse" class="sub-item">Radiesse 再生針</a>
+                    <a href="#sculptra" class="sub-item">Sculptra 舒顏萃</a>
+                  </div>
+                </li>
+                <li class="category-item" data-target="ha">
+                  <button type="button" class="category-toggle">
+                    <span class="category-label">玻尿酸</span>
+                    <span class="arrow-desktop" aria-hidden="true">➔</span>
+                    <span class="arrow-mobile" aria-hidden="true">▾</span>
+                  </button>
+                  <div class="mobile-subpanel">
+                    <a href="#belotero" class="sub-item">Belotero 保柔緹</a>
+                    <a href="#teosane" class="sub-item">Teoxane 緹奧希</a>
+                    <a href="#juvederm" class="sub-item">Juvederm喬雅登</a>
+                    <a href="#dermafiller" class="sub-item">Dermafiller 德瑪芙</a>
+                  </div>
+                </li>
+                <li class="category-item" data-target="advanced">
+                  <button type="button" class="category-toggle">
+                    <span class="category-label">水光、黑眼圈、消脂</span>
+                    <span class="arrow-desktop" aria-hidden="true">➔</span>
+                    <span class="arrow-mobile" aria-hidden="true">▾</span>
+                  </button>
+                  <div class="mobile-subpanel">
+                    <a href="#sunmax" class="sub-item">Sunmax 熊貓針</a>
+                    <a href="#ronkyla" class="sub-item">Ronkyla 容脂針</a>
+                    <a href="#belotero-soft" class="sub-item">Belotero 素妍針</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 右側：細項內容區塊 -->
+            <div class="mega-content">
+
+              <div class="sub-category-pane active" id="pane-skin">
+                <a href="#dermapen" class="sub-item"><span class="sub-name">Dermapen得美微針筆</span></a>
+                <a href="#syndeo" class="sub-item"><span class="sub-name">Syndeo海菲秀</span></a>
+                <a href="#emfusion" class="sub-item"><span class="sub-name">Emfusion</span></a>
+                <a href="#jetpeel" class="sub-item"><span class="sub-name">JetPeel潔比爾</span></a>
+                <a href="#seyo" class="sub-item"><span class="sub-name">SEYO水光儀</span></a>
+                <a href="#smartlux" class="sub-item"><span class="sub-name">SMARTLUX照光機</span></a>
+                <a href="#curejet" class="sub-item"><span class="sub-name">CUREJET酷捷</span></a>
+              </div>
+
+              <div class="sub-category-pane" id="pane-body">
+                <a href="#inmode" class="sub-item"><span class="sub-name">InMode LIFT鑽石超塑</span></a>
+                <a href="#embody" class="sub-item"><span class="sub-name">EMBODY核心美力</span></a>
+                <a href="#emsculpt" class="sub-item"><span class="sub-name">Emsculpt NEO 熱磁減脂</span></a>
+                <a href="#indiba" class="sub-item"><span class="sub-name">INDIBA英特波</span></a>
+                <a href="#onda" class="sub-item"><span class="sub-name">Onda PRO超微波</span></a>
+                <a href="#winback" class="sub-item"><span class="sub-name">Winback</span></a>
+              </div>
+
+              <div class="sub-category-pane" id="pane-youth">
+                <a href="#iv" class="sub-item"><span class="sub-name">營養點滴</span></a>
+                <a href="#maxwave" class="sub-item"><span class="sub-name">Maxwave極限震波</span></a>
+              </div>
+
+              <div class="sub-category-pane" id="pane-energy">
+                <a href="#density" class="sub-item"><span class="sub-name">DENSITY 無雙電波</span></a>
+                <a href="#mpt" class="sub-item"><span class="sub-name">Ultraformer MPT海芙音波媚必提</span></a>
+                <a href="#ulthera" class="sub-item"><span class="sub-name">Ultherapy Prime美國音波 第二代</span></a>
+                <a href="#potenza" class="sub-item"><span class="sub-name">Potenza 無限電波</span></a>
+              </div>
+
+              <div class="sub-category-pane" id="pane-laser">
+                <a href="#capri" class="sub-item"><span class="sub-name">Capri 藍雷射</span></a>
+                <a href="#discovery" class="sub-item"><span class="sub-name">Discovery Pico探索皮秒</span></a>
+              </div>
+
+              <div class="sub-category-pane" id="pane-botox">
+                <a href="#botox-brand" class="sub-item"><span class="sub-name">Botox 保妥適</span></a>
+                <a href="#xeomin" class="sub-item"><span class="sub-name">Xeomin 天使肉毒</span></a>
+                <a href="#nabota" class="sub-item"><span class="sub-name">優力柔(奇肌肉毒)</span></a>
+              </div>
+
+              <div class="sub-category-pane" id="pane-colloids">
+                <a href="#aesthefill" class="sub-item"><span class="sub-name">AestheFill 艾麗斯</span></a>
+                <a href="#juvelook" class="sub-item"><span class="sub-name">Juvelook喬雅露</span></a>
+                <a href="#radiesse" class="sub-item"><span class="sub-name">Radiesse 再生針</span></a>
+                <a href="#sculptra" class="sub-item"><span class="sub-name">Sculptra 舒顏萃</span></a>
+              </div>
+
+              <div class="sub-category-pane" id="pane-ha">
+                <a href="#belotero" class="sub-item"><span class="sub-name">Belotero 保柔緹</span></a>
+                <a href="#teosane" class="sub-item"><span class="sub-name">Teoxane 緹奧希</span></a>
+                <a href="#juvederm" class="sub-item"><span class="sub-name">Juvederm喬雅登</span></a>
+                <a href="#dermafiller" class="sub-item"><span class="sub-name">Dermafiller 德瑪芙</span></a>
+              </div>
+
+              <div class="sub-category-pane" id="pane-advanced">
+                <a href="#sunmax" class="sub-item"><span class="sub-name">Sunmax 熊貓針</span></a>
+                <a href="#ronkyla" class="sub-item"><span class="sub-name">Ronkyla 容脂針</span></a>
+                <a href="#belotero-soft" class="sub-item"><span class="sub-name">Belotero 素妍針</span></a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#space">空間理念</a>
+      <a href="#team">醫療團隊</a>
+      <a href="#journal">專業文章</a>
+      <a href="#location">分館資訊</a>
+    </nav>
+    <a href="https://lin.ee/Sfhzb65" target="_blank" class="cta-btn solid">加 LINE 預約</a>
+    <button class="menu-toggle" aria-label="開啟選單" aria-expanded="false" aria-controls="primaryNav">☰</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="wrap hero-inner">
+      <div class="eyebrow"><span class="rule"></span>台中南屯區・豐樂公園站</div>
+      <h1 class="display">在城市的縫隙裡，<br>留一處與<em>自己</em>對話的場域。</h1>
+      <p class="hero-sub">曜診所提供輪廓保養、膚質改善與體態雕塑等客製化醫美療程。我們不談喧嘩的廣告語，只談恰如其分的你。</p>
+      <div class="hero-actions">
+        <a href="#book" class="cta-btn solid">預約諮詢</a>
+        <a href="#treatments" class="cta-btn">查看療程項目</a>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <span>曜幫你 曜見自我</span>
+      <span>PRIVATE AESTHETIC SPACE</span>
+    </div>
+  </section>
+
+  <section id="treatments">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="kicker"><span class="num">01</span>POPULAR TREATMENTS</div>
+          <h2 class="title">熱門療程</h2>
+        </div>
+        <p class="section-note">依你的膚況與需求，由醫療團隊規劃專屬療程組合，而非制式套餐。</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="treat-grid reveal">
+        <div class="treat-card">
+          <div><span class="treat-tag">輪廓・電波音波</span>
+          <div class="treat-name">DENSITY 無雙電波</div>
+          <p class="treat-desc">緊緻輪廓線條，改善鬆弛與細紋，維持自然支撐力。</p></div>
+          <a href="#" class="treat-more">了解療程 →</a>
+        </div>
+        <div class="treat-card">
+          <div><span class="treat-tag">膚質・雷射</span>
+          <div class="treat-name">Discovery Pico 探索皮秒</div>
+          <p class="treat-desc">改善色素沉澱與痘疤，提升膚質透亮度。</p></div>
+          <a href="#" class="treat-more">了解療程 →</a>
+        </div>
+        <div class="treat-card">
+          <div><span class="treat-tag">體態・雕塑</span>
+          <div class="treat-name">Emsculpt NEO 熱磁減脂</div>
+          <p class="treat-desc">同步增肌與減脂，雕塑核心與四肢線條。</p></div>
+          <a href="#" class="treat-more">了解療程 →</a>
+        </div>
+        <div class="treat-card">
+          <div><span class="treat-tag">澎潤・填充</span>
+          <div class="treat-name">Sculptra 舒顏萃</div>
+          <p class="treat-desc">刺激膠原新生，由內而外改善凹陷與鬆弛。</p></div>
+          <a href="#" class="treat-more">了解療程 →</a>
+        </div>
+        <div class="treat-card">
+          <div><span class="treat-tag">頭皮・育髮</span>
+          <div class="treat-name">CUREJET 酷捷</div>
+          <p class="treat-desc">改善頭皮循環與髮況，強韌髮根基底。</p></div>
+          <a href="#" class="treat-more">了解療程 →</a>
+        </div>
+        <div class="treat-card">
+          <div><span class="treat-tag">輪廓・微整</span>
+          <div class="treat-name">Botox 保妥適</div>
+          <p class="treat-desc">改善動態紋路，維持自然表情張力。</p></div>
+          <a href="#" class="treat-more">了解療程 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="space" class="space-section">
+    <div class="wrap space-grid">
+      <div class="photo-block reveal"></div>
+      <div class="space-copy reveal">
+        <div class="kicker"><span class="num">02</span>THE SPACE</div>
+        <h2 class="title">靜謐空間，自我對話的場域</h2>
+        <p>遠離城市噪音，曜診所打造低彩度、高質感的美學空間，為重視形象與隱私的你，創造一處可以放鬆、重整的專屬場域。</p>
+        <p>這裡沒有喧嘩的廣告語，只有你與更好的自己——回應每一位風格自成的個體，以清晰、俐落、無贅的美學表達。</p>
+        <div class="stat-row">
+          <div><b>1:1</b><span>單人獨立診間</span></div>
+          <div><b>捷運步行5分鐘</b><span>豐樂公園站直達</span></div>
+          <div><b>全預約制</b><span>官方Line預約諮詢</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="kicker"><span class="num">03</span>MEDICAL TEAM</div>
+          <h2 class="title">醫療團隊</h2>
+        </div>
+        <p class="section-note">由專業的醫師群，共同規劃每一份療程方案。（左右滑動可查看更多醫師）</p>
+      </div>
+
+      <div class="team-slider reveal">
+
+        <div class="team-card">
+          <div class="photo-block" style="overflow: hidden; border-radius: 4px;">
+            <img src="鍾曜任醫師.avif" alt="鍾曜任醫師" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <div style="margin-top: 16px;">
+            <div class="team-name">鍾曜任醫師</div>
+            <div class="team-role">復興店・文心店</div>
+            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--text-secondary);">
+              <p><strong>【學經歷】</strong><br>
+              國立陽明交通大學醫學系畢<br>
+              台北榮民總醫院訓練／台北市聯合醫院不分科住院醫師<br>
+              台北市立聯合醫院松德院區訓練<br>
+              亞東醫院家庭醫學科住院醫師、總醫師<br>
+              台灣家庭醫學醫學會專科醫師<br>
+              台灣臨床TMS腦刺激學會會員<br>
+              台灣肥胖醫學會會員／台灣運動營養學會會員</p>
+              <p style="margin-top: 8px;"><strong>【專長】</strong><br>
+              得美微針筆處理痘疤、落髮等問題、減重＆體態控制、全身雕塑、電波及音波拉提、半永久雷射除毛、膚況改善雷射、肉毒桿菌</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="photo-block" style="overflow: hidden; border-radius: 4px;">
+            <img src="王晨宇醫師.avif" alt="王晨宇醫師" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <div style="margin-top: 16px;">
+            <div class="team-name">王晨宇醫師</div>
+            <div class="team-role">文心店</div>
+            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--text-secondary);">
+              <p><strong>【學經歷】</strong><br>
+              長庚大學醫學系畢業｜中華民國衛福部定專科醫師執照<br>
+              林口長庚醫院、童綜合醫院高級健檢中心主治醫師<br>
+              安妞美學診所／星和診所主治醫師<br>
+              糖尿病共通照護網／職業醫學勞工體格與健康檢查合格認證專科醫師</p>
+              <p style="margin-top: 8px;"><strong>【專長】</strong><br>
+              精準肉毒注射與輪廓調整、電波與音波緊緻拉提、客製化水光注射與肌膚養護、雷射光療與膚色管理、臉頸輪廓與非侵入式體態雕塑（Onda Pro、冷凍減脂等）、全身各部位除毛</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="photo-block" style="overflow: hidden; border-radius: 4px;">
+            <img src="張涵清醫師.avif" alt="張涵清醫師" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <div style="margin-top: 16px;">
+            <div class="team-name">張涵清醫師</div>
+            <div class="team-role">文心店</div>
+            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--text-secondary);">
+              <p><strong>【學經歷】</strong><br>
+              中國醫藥大學醫學系畢業<br>
+              台中榮民總醫院 家醫部住院醫師<br>
+              微整形美容醫學會會員</p>
+              <p style="margin-top: 8px;"><strong>【專長】</strong><br>
+              Botox保妥適、Nabota、V50玻尿酸、Ellanse、PLT、MINT神力拉提、鳳凰電波、海芙音波等原廠認證與研習醫師</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="photo-block" style="overflow: hidden; border-radius: 4px;">
+            <img src="張晉慈醫師.avif" alt="張晉慈醫師" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <div style="margin-top: 16px;">
+            <div class="team-name">張晉慈醫師</div>
+            <div class="team-role">文心店</div>
+            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--text-secondary);">
+              <p><strong>【學經歷】</strong><br>
+              中山醫學大學醫學系畢｜台中榮總一般科住院醫師<br>
+              台灣微整形美容醫學會會員｜中華民國美容醫學醫學會會員</p>
+              <p style="margin-top: 8px;"><strong>【專長】</strong><br>
+              電音波緊緻拉提、肉毒桿菌注射、全臉評估精雕、精緻鼻雕、臉部埋線拉提，以及海芙音波、蝴蝶電波、玩美電波、舒顏萃、逆時針等多項原廠認證醫師及雙美膠原蛋白國際培訓講師</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="photo-block" style="overflow: hidden; border-radius: 4px;">
+            <img src="鍾念庭醫師.avif" alt="鍾念庭醫師" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <div style="margin-top: 16px;">
+            <div class="team-name">鍾念庭醫師</div>
+            <div class="team-role">文心店</div>
+            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--text-secondary);">
+              <p><strong>【學經歷】</strong><br>
+              中山醫學大學醫學系畢業｜臺中榮總家醫部主治醫師、總醫師、住院醫師<br>
+              臺中榮總減重中心／健康管理中心主治醫師<br>
+              微整形美容醫學會會員</p>
+              <p style="margin-top: 8px;"><strong>【專長】</strong><br>
+              家庭醫學科專科醫師、中華民國肥胖研究學會專科醫師<br>
+              肥胖症與體重管理、慢性病管理、健康管理與諮詢、骨質疏鬆、旅遊醫學與戒菸治療</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="photo-block" style="overflow: hidden; border-radius: 4px;">
+            <img src="林志宇醫師.avif" alt="林志宇醫師" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <div style="margin-top: 16px;">
+            <div class="team-name">林志宇醫師</div>
+            <div class="team-role">文心店</div>
+            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--text-secondary);">
+              <p><strong>【學經歷】</strong><br>
+              中山醫學大學醫學士</p>
+              <p style="margin-top: 8px;"><strong>【專長】</strong><br>
+              NeoFilera妮芙蕾、Meteora美特拉線雕、提奧希玻尿酸、AestheFill艾麗斯、MINT Lift秘特拉提線、Cleviel V50、逆時針原廠認證醫師</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="location">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="kicker"><span class="num">05</span>LOCATION</div>
+          <h2 class="title">分館資訊</h2>
+        </div>
+        <p class="section-note">左右滑動可查看不同分館資訊。</p>
+      </div>
+
+      <div class="branch-slider reveal">
+
+        <div class="branch-card">
+          <img src="Taichung.avif" alt="曜診所台中館" style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block;">
+          <div style="padding: 24px;">
+            <p style="margin-top:0;"><b style="font-family:var(--serif); font-size:22px; color:var(--ink); display:block; margin-bottom:14px;">曜診所・台中館</b><b>地址：</b>台中市南屯區文心南三路332號（近豐樂公園捷運站）<br>
+            <b>電話：</b>04-2473-8803<br>
+            全預約制，請於官方 LINE 完成預約後前往。<br>
+
+            <span style="display:flex; gap:8px; flex-wrap:wrap; margin-top:14px;">
+              <a href="#top" class="cta-btn" style="padding:6px 14px; font-size:12px;">官方網站</a>
+              <a href="https://lin.ee/Sfhzb65" target="_blank" class="cta-btn solid" style="padding:6px 14px; font-size:12px;">加入 LINE</a>
+              <a href="https://www.facebook.com/share/1FQMm58v2Y/?mibextid=wwXIfr" target="_blank" class="cta-btn" style="padding:6px 14px; font-size:12px;">Facebook</a>
+              <a href="https://www.instagram.com/flos.clinic.wx/" target="_blank" class="cta-btn" style="padding:6px 14px; font-size:12px;">Instagram</a>
+            </span>
+            </p>
+
+            <div class="stat-row" style="margin-top:24px; gap:24px; flex-wrap:wrap;">
+              <div><b>週二至週五</b><span>12:00 – 20:00</span></div>
+              <div><b>週六</b><span>11:00 – 19:00</span></div>
+              <div><b>週一、週日公休</b><span>國定假日另行公告</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="branch-card">
+          <img src="Taipei.avif" alt="曜診所台北復興館" style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block;">
+          <div style="padding: 24px;">
+            <p style="margin-top:0;"><b style="font-family:var(--serif); font-size:22px; color:var(--ink); display:block; margin-bottom:14px;">曜診所・台北復興館</b><b>地址：</b>台北市大安區大安路一段73號（5樓）<br>
+            <b>電話：</b>02-2721-1201<br>
+            全預約制，請於官方 LINE 完成預約後前往。<br>
+
+            <span style="display:flex; gap:8px; flex-wrap:wrap; margin-top:14px;">
+              <a href="https://www.flosclinic.org/location" target="_blank" class="cta-btn" style="padding:6px 14px; font-size:12px;">官方網站</a>
+              <a href="https://lin.ee/YrMRxyb" target="_blank" class="cta-btn solid" style="padding:6px 14px; font-size:12px;">加入 LINE</a>
+              <a href="https://www.facebook.com/profile.php?id=61576845332290" target="_blank" class="cta-btn" style="padding:6px 14px; font-size:12px;">Facebook</a>
+              <a href="https://www.instagram.com/flos.clinic?igsh=MWR6NGdta2w0amx1OA%3D%3D" target="_blank" class="cta-btn" style="padding:6px 14px; font-size:12px;">Instagram</a>
+            </span>
+            </p>
+
+            <div class="stat-row" style="margin-top:24px; gap:24px; flex-wrap:wrap;">
+              <div><b>週一至週五</b><span>12:00 – 20:30</span></div>
+              <div><b>週六至週日</b><span>11:00 – 19:00</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="wordmark">FLOS <small>曜 診 所</small></div>
+        <p style="max-width:280px; margin-top:14px;">回應每一位風格自成的個體。清晰、俐落、無贅的美學表達，以你的節奏與需求為唯一出發。</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>探索</h4>
+          <a href="#treatments">療程項目</a>
+          <a href="#team">醫療團隊</a>
+          <a href="#journal">專業文章</a>
+        </div>
+        <div class="foot-col">
+          <h4>聯繫</h4>
+          <p>04-2473-8803</p>
+          <p>flosclinictw@gmail.com</p>
+          <a href="https://lin.ee/Sfhzb65" target="_blank" class="cta-btn solid">加 LINE 預約</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Copyright© 2026 曜診所 Flos. All rights reserved.</span>
+      <div class="socials">
+        <a href="https://www.facebook.com/share/1FQMm58v2Y/?mibextid=wwXIfr" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/flos.clinic.wx/" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+
+    // 1. Header 滾動樣式 + reveal 動畫
+    const header = document.getElementById('siteHeader');
+    if (header) {
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 20);
+      });
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    const isMobile = () => window.matchMedia('(max-width: 880px)').matches;
+
+    // 2a. 桌機版：療程分類切換（肌膚管理／勻體方案…，維持原本 hover 行為不變）
+    const categoryItems = document.querySelectorAll(".category-item");
+    const subPanes = document.querySelectorAll(".sub-category-pane");
+    categoryItems.forEach(item => {
+      item.addEventListener("mouseenter", function () {
+        if (!isMobile()) switchCategory(this);
+      });
+      item.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (isMobile()) {
+          toggleMobileCategory(this);
+        } else {
+          switchCategory(this);
+        }
+      });
+    });
+    function switchCategory(currentItem) {
+      categoryItems.forEach(i => i.classList.remove("active"));
+      currentItem.classList.add("active");
+      const targetID = currentItem.getAttribute("data-target");
+      subPanes.forEach(pane => {
+        pane.classList.toggle("active", pane.id === "pane-" + targetID);
+      });
+    }
+
+    // 2b. 手機版：每個分類項目各自在原地展開／收合，同時間只留一個展開
+    function toggleMobileCategory(item) {
+      const wasOpen = item.classList.contains("mobile-open");
+      categoryItems.forEach(i => i.classList.remove("mobile-open"));
+      if (!wasOpen) item.classList.add("mobile-open");
+    }
+
+    // 3. 手機版漢堡選單：開關 + 各種關閉時機
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.getElementById('primaryNav');
+    const dropdownMega = document.querySelector('.nav-item.dropdown-mega');
+    const dropdownLink = dropdownMega ? dropdownMega.querySelector(':scope > .nav-link') : null;
+
+    function openMenu() {
+      navLinks.classList.add('active');
+      menuToggle.textContent = '✕';
+      menuToggle.setAttribute('aria-expanded', 'true');
+    }
+    function closeMenu() {
+      navLinks.classList.remove('active');
+      menuToggle.textContent = '☰';
+      menuToggle.setAttribute('aria-expanded', 'false');
+      if (dropdownMega) dropdownMega.classList.remove('mega-open');
+      categoryItems.forEach(i => i.classList.remove('mobile-open'));
+    }
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        navLinks.classList.contains('active') ? closeMenu() : openMenu();
+      });
+
+      // 手機版：點「療程項目」展開/收合手風琴，不跳轉頁面
+      if (dropdownLink) {
+        dropdownLink.addEventListener('click', function (e) {
+          if (isMobile()) {
+            e.preventDefault();
+            dropdownMega.classList.toggle('mega-open');
+          }
+        });
+      }
+
+      // 點擊選單內的一般連結（非療程項目手風琴按鈕本身）後自動收合選單
+      navLinks.querySelectorAll('a').forEach(link => {
+        if (link === dropdownLink) return;
+        link.addEventListener('click', () => { if (isMobile()) closeMenu(); });
+      });
+
+      // 點擊選單以外的地方時收合
+      document.addEventListener('click', function (e) {
+        if (isMobile() && navLinks.classList.contains('active') &&
+            !navLinks.contains(e.target) && e.target !== menuToggle) {
+          closeMenu();
+        }
+      });
+
+      // 按 Esc 收合
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) closeMenu();
+      });
+
+      // 視窗放大回桌機尺寸時，重置手機選單狀態
+      window.addEventListener('resize', function () {
+        if (!isMobile()) closeMenu();
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
