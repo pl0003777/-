@@ -69,6 +69,8 @@
     font-weight:600; display:flex; align-items:baseline; gap:8px;
   }
   .wordmark small{font-family:var(--sans); font-weight:400; font-size:12px; letter-spacing:0.28em; color:var(--ink-soft);}
+  .logo-img{ height:50.7px; width:213px; object-fit:contain; }
+  @media (max-width:760px){ .logo-img{ height:42.7px; width:179.3px; } }
   nav.links{ display:flex; gap:40px; font-size:14px; letter-spacing:0.06em; align-items:center; }
   nav.links a{ position:relative; padding:4px 0; }
   nav.links a::after{
@@ -422,7 +424,9 @@
 
 <header id="siteHeader">
   <div class="wrap nav">
-    <a href="#top" class="wordmark">FLOS <small>曜 診 所</small></a>
+    <a href="#top" class="wordmark">
+      <img src="logo.png" alt="曜診所 Flos Clinic" class="logo-img">
+    </a>
     <nav class="links" id="primaryNav">
       <!-- 導覽列：療程項目下拉選單 -->
       <div class="nav-item dropdown-mega">
@@ -442,13 +446,13 @@
                     <span class="arrow-mobile" aria-hidden="true">▾</span>
                   </button>
                   <div class="mobile-subpanel">
-                    <a href="#dermapen" class="sub-item">Dermapen得美微針筆</a>
-                    <a href="#syndeo" class="sub-item">Syndeo海菲秀</a>
-                    <a href="#emfusion" class="sub-item">Emfusion</a>
-                    <a href="#jetpeel" class="sub-item">JetPeel潔比爾</a>
-                    <a href="#seyo" class="sub-item">SEYO水光儀</a>
-                    <a href="#smartlux" class="sub-item">SMARTLUX照光機</a>
-                    <a href="#curejet" class="sub-item">CUREJET酷捷</a>
+                    <a href="treatments/dermapen.html" class="sub-item">Dermapen得美微針筆</a>
+                    <a href="treatments/syndeo.html" class="sub-item">Syndeo海菲秀</a>
+                    <a href="treatments/emfusion.html" class="sub-item">Emfusion</a>
+                    <a href="treatments/jetpeel.html" class="sub-item">JetPeel潔比爾</a>
+                    <a href="treatments/seyo.html" class="sub-item">SEYO水光儀</a>
+                    <a href="treatments/smartlux.html" class="sub-item">SMARTLUX照光機</a>
+                    <a href="treatments/curejet.html" class="sub-item">CUREJET酷捷</a>
                   </div>
                 </li>
                 <li class="category-item" data-target="body">
@@ -458,12 +462,12 @@
                     <span class="arrow-mobile" aria-hidden="true">▾</span>
                   </button>
                   <div class="mobile-subpanel">
-                    <a href="#inmode" class="sub-item">InMode LIFT鑽石超塑</a>
-                    <a href="#embody" class="sub-item">EMBODY核心美力</a>
-                    <a href="#emsculpt" class="sub-item">Emsculpt NEO 熱磁減脂</a>
-                    <a href="#indiba" class="sub-item">INDIBA英特波</a>
-                    <a href="#onda" class="sub-item">Onda PRO超微波</a>
-                    <a href="#winback" class="sub-item">Winback</a>
+                    <a href="treatments/inmode.html" class="sub-item">InMode LIFT鑽石超塑</a>
+                    <a href="treatments/embody.html" class="sub-item">EMBODY核心美力</a>
+                    <a href="treatments/emsculpt.html" class="sub-item">Emsculpt NEO 熱磁減脂</a>
+                    <a href="treatments/indiba.html" class="sub-item">INDIBA英特波</a>
+                    <a href="treatments/onda.html" class="sub-item">Onda PRO超微波</a>
+                    <a href="treatments/winback.html" class="sub-item">Winback</a>
                   </div>
                 </li>
                 <li class="category-item" data-target="youth">
@@ -473,8 +477,8 @@
                     <span class="arrow-mobile" aria-hidden="true">▾</span>
                   </button>
                   <div class="mobile-subpanel">
-                    <a href="#iv" class="sub-item">營養點滴</a>
-                    <a href="#maxwave" class="sub-item">Maxwave極限震波</a>
+                    <a href="treatments/iv.html" class="sub-item">營養點滴</a>
+                    <a href="treatments/maxwave.html" class="sub-item">Maxwave極限震波</a>
                   </div>
                 </li>
                 <li class="category-item" data-target="energy">
@@ -484,10 +488,10 @@
                     <span class="arrow-mobile" aria-hidden="true">▾</span>
                   </button>
                   <div class="mobile-subpanel">
-                    <a href="#density" class="sub-item">DENSITY 無雙電波</a>
-                    <a href="#mpt" class="sub-item">Ultraformer MPT海芙音波媚必提</a>
-                    <a href="#ulthera" class="sub-item">Ultherapy Prime美國音波 第二代</a>
-                    <a href="#potenza" class="sub-item">Potenza 無限電波</a>
+                    <a href="treatments/density.html" class="sub-item">DENSITY 無雙電波</a>
+                    <a href="treatments/mpt.html" class="sub-item">Ultraformer MPT海芙音波媚必提</a>
+                    <a href="treatments/ulthera.html" class="sub-item">Ultherapy Prime美國音波 第二代</a>
+                    <a href="treatments/potenza.html" class="sub-item">Potenza 無限電波</a>
                   </div>
                 </li>
                 <li class="category-item" data-target="laser">
@@ -497,8 +501,8 @@
                     <span class="arrow-mobile" aria-hidden="true">▾</span>
                   </button>
                   <div class="mobile-subpanel">
-                    <a href="#capri" class="sub-item">Capri 藍雷射</a>
-                    <a href="#discovery" class="sub-item">Discovery Pico探索皮秒</a>
+                    <a href="treatments/capri.html" class="sub-item">Capri 藍雷射</a>
+                    <a href="treatments/discovery.html" class="sub-item">Discovery Pico探索皮秒</a>
                   </div>
                 </li>
                 <li class="category-item" data-target="botox">
@@ -508,9 +512,9 @@
                     <span class="arrow-mobile" aria-hidden="true">▾</span>
                   </button>
                   <div class="mobile-subpanel">
-                    <a href="#botox-brand" class="sub-item">Botox 保妥適</a>
-                    <a href="#xeomin" class="sub-item">Xeomin 天使肉毒</a>
-                    <a href="#nabota" class="sub-item">優力柔(奇肌肉毒)</a>
+                    <a href="treatments/botox-brand.html" class="sub-item">Botox 保妥適</a>
+                    <a href="treatments/xeomin.html" class="sub-item">Xeomin 天使肉毒</a>
+                    <a href="treatments/nabota.html" class="sub-item">優力柔(奇肌肉毒)</a>
                   </div>
                 </li>
                 <li class="category-item" data-target="colloids">
@@ -520,10 +524,10 @@
                     <span class="arrow-mobile" aria-hidden="true">▾</span>
                   </button>
                   <div class="mobile-subpanel">
-                    <a href="#aesthefill" class="sub-item">AestheFill 艾麗斯</a>
-                    <a href="#juvelook" class="sub-item">Juvelook喬雅露</a>
-                    <a href="#radiesse" class="sub-item">Radiesse 再生針</a>
-                    <a href="#sculptra" class="sub-item">Sculptra 舒顏萃</a>
+                    <a href="treatments/aesthefill.html" class="sub-item">AestheFill 艾麗斯</a>
+                    <a href="treatments/juvelook.html" class="sub-item">Juvelook喬雅露</a>
+                    <a href="treatments/radiesse.html" class="sub-item">Radiesse 再生針</a>
+                    <a href="treatments/sculptra.html" class="sub-item">Sculptra 舒顏萃</a>
                   </div>
                 </li>
                 <li class="category-item" data-target="ha">
@@ -533,10 +537,10 @@
                     <span class="arrow-mobile" aria-hidden="true">▾</span>
                   </button>
                   <div class="mobile-subpanel">
-                    <a href="#belotero" class="sub-item">Belotero 保柔緹</a>
-                    <a href="#teosane" class="sub-item">Teoxane 緹奧希</a>
-                    <a href="#juvederm" class="sub-item">Juvederm喬雅登</a>
-                    <a href="#dermafiller" class="sub-item">Dermafiller 德瑪芙</a>
+                    <a href="treatments/belotero.html" class="sub-item">Belotero 保柔緹</a>
+                    <a href="treatments/teosane.html" class="sub-item">Teoxane 緹奧希</a>
+                    <a href="treatments/juvederm.html" class="sub-item">Juvederm喬雅登</a>
+                    <a href="treatments/dermafiller.html" class="sub-item">Dermafiller 德瑪芙</a>
                   </div>
                 </li>
                 <li class="category-item" data-target="advanced">
@@ -546,9 +550,9 @@
                     <span class="arrow-mobile" aria-hidden="true">▾</span>
                   </button>
                   <div class="mobile-subpanel">
-                    <a href="#sunmax" class="sub-item">Sunmax 熊貓針</a>
-                    <a href="#ronkyla" class="sub-item">Ronkyla 容脂針</a>
-                    <a href="#belotero-soft" class="sub-item">Belotero 素妍針</a>
+                    <a href="treatments/sunmax.html" class="sub-item">Sunmax 熊貓針</a>
+                    <a href="treatments/ronkyla.html" class="sub-item">Ronkyla 容脂針</a>
+                    <a href="treatments/belotero-soft.html" class="sub-item">Belotero 素妍針</a>
                   </div>
                 </li>
               </ul>
@@ -558,65 +562,65 @@
             <div class="mega-content">
 
               <div class="sub-category-pane active" id="pane-skin">
-                <a href="#dermapen" class="sub-item"><span class="sub-name">Dermapen得美微針筆</span></a>
-                <a href="#syndeo" class="sub-item"><span class="sub-name">Syndeo海菲秀</span></a>
-                <a href="#emfusion" class="sub-item"><span class="sub-name">Emfusion</span></a>
-                <a href="#jetpeel" class="sub-item"><span class="sub-name">JetPeel潔比爾</span></a>
-                <a href="#seyo" class="sub-item"><span class="sub-name">SEYO水光儀</span></a>
-                <a href="#smartlux" class="sub-item"><span class="sub-name">SMARTLUX照光機</span></a>
-                <a href="#curejet" class="sub-item"><span class="sub-name">CUREJET酷捷</span></a>
+                <a href="treatments/dermapen.html" class="sub-item"><span class="sub-name">Dermapen得美微針筆</span></a>
+                <a href="treatments/syndeo.html" class="sub-item"><span class="sub-name">Syndeo海菲秀</span></a>
+                <a href="treatments/emfusion.html" class="sub-item"><span class="sub-name">Emfusion</span></a>
+                <a href="treatments/jetpeel.html" class="sub-item"><span class="sub-name">JetPeel潔比爾</span></a>
+                <a href="treatments/seyo.html" class="sub-item"><span class="sub-name">SEYO水光儀</span></a>
+                <a href="treatments/smartlux.html" class="sub-item"><span class="sub-name">SMARTLUX照光機</span></a>
+                <a href="treatments/curejet.html" class="sub-item"><span class="sub-name">CUREJET酷捷</span></a>
               </div>
 
               <div class="sub-category-pane" id="pane-body">
-                <a href="#inmode" class="sub-item"><span class="sub-name">InMode LIFT鑽石超塑</span></a>
-                <a href="#embody" class="sub-item"><span class="sub-name">EMBODY核心美力</span></a>
-                <a href="#emsculpt" class="sub-item"><span class="sub-name">Emsculpt NEO 熱磁減脂</span></a>
-                <a href="#indiba" class="sub-item"><span class="sub-name">INDIBA英特波</span></a>
-                <a href="#onda" class="sub-item"><span class="sub-name">Onda PRO超微波</span></a>
-                <a href="#winback" class="sub-item"><span class="sub-name">Winback</span></a>
+                <a href="treatments/inmode.html" class="sub-item"><span class="sub-name">InMode LIFT鑽石超塑</span></a>
+                <a href="treatments/embody.html" class="sub-item"><span class="sub-name">EMBODY核心美力</span></a>
+                <a href="treatments/emsculpt.html" class="sub-item"><span class="sub-name">Emsculpt NEO 熱磁減脂</span></a>
+                <a href="treatments/indiba.html" class="sub-item"><span class="sub-name">INDIBA英特波</span></a>
+                <a href="treatments/onda.html" class="sub-item"><span class="sub-name">Onda PRO超微波</span></a>
+                <a href="treatments/winback.html" class="sub-item"><span class="sub-name">Winback</span></a>
               </div>
 
               <div class="sub-category-pane" id="pane-youth">
-                <a href="#iv" class="sub-item"><span class="sub-name">營養點滴</span></a>
-                <a href="#maxwave" class="sub-item"><span class="sub-name">Maxwave極限震波</span></a>
+                <a href="treatments/iv.html" class="sub-item"><span class="sub-name">營養點滴</span></a>
+                <a href="treatments/maxwave.html" class="sub-item"><span class="sub-name">Maxwave極限震波</span></a>
               </div>
 
               <div class="sub-category-pane" id="pane-energy">
-                <a href="#density" class="sub-item"><span class="sub-name">DENSITY 無雙電波</span></a>
-                <a href="#mpt" class="sub-item"><span class="sub-name">Ultraformer MPT海芙音波媚必提</span></a>
-                <a href="#ulthera" class="sub-item"><span class="sub-name">Ultherapy Prime美國音波 第二代</span></a>
-                <a href="#potenza" class="sub-item"><span class="sub-name">Potenza 無限電波</span></a>
+                <a href="treatments/density.html" class="sub-item"><span class="sub-name">DENSITY 無雙電波</span></a>
+                <a href="treatments/mpt.html" class="sub-item"><span class="sub-name">Ultraformer MPT海芙音波媚必提</span></a>
+                <a href="treatments/ulthera.html" class="sub-item"><span class="sub-name">Ultherapy Prime美國音波 第二代</span></a>
+                <a href="treatments/potenza.html" class="sub-item"><span class="sub-name">Potenza 無限電波</span></a>
               </div>
 
               <div class="sub-category-pane" id="pane-laser">
-                <a href="#capri" class="sub-item"><span class="sub-name">Capri 藍雷射</span></a>
-                <a href="#discovery" class="sub-item"><span class="sub-name">Discovery Pico探索皮秒</span></a>
+                <a href="treatments/capri.html" class="sub-item"><span class="sub-name">Capri 藍雷射</span></a>
+                <a href="treatments/discovery.html" class="sub-item"><span class="sub-name">Discovery Pico探索皮秒</span></a>
               </div>
 
               <div class="sub-category-pane" id="pane-botox">
-                <a href="#botox-brand" class="sub-item"><span class="sub-name">Botox 保妥適</span></a>
-                <a href="#xeomin" class="sub-item"><span class="sub-name">Xeomin 天使肉毒</span></a>
-                <a href="#nabota" class="sub-item"><span class="sub-name">優力柔(奇肌肉毒)</span></a>
+                <a href="treatments/botox-brand.html" class="sub-item"><span class="sub-name">Botox 保妥適</span></a>
+                <a href="treatments/xeomin.html" class="sub-item"><span class="sub-name">Xeomin 天使肉毒</span></a>
+                <a href="treatments/nabota.html" class="sub-item"><span class="sub-name">優力柔(奇肌肉毒)</span></a>
               </div>
 
               <div class="sub-category-pane" id="pane-colloids">
-                <a href="#aesthefill" class="sub-item"><span class="sub-name">AestheFill 艾麗斯</span></a>
-                <a href="#juvelook" class="sub-item"><span class="sub-name">Juvelook喬雅露</span></a>
-                <a href="#radiesse" class="sub-item"><span class="sub-name">Radiesse 再生針</span></a>
-                <a href="#sculptra" class="sub-item"><span class="sub-name">Sculptra 舒顏萃</span></a>
+                <a href="treatments/aesthefill.html" class="sub-item"><span class="sub-name">AestheFill 艾麗斯</span></a>
+                <a href="treatments/juvelook.html" class="sub-item"><span class="sub-name">Juvelook喬雅露</span></a>
+                <a href="treatments/radiesse.html" class="sub-item"><span class="sub-name">Radiesse 再生針</span></a>
+                <a href="treatments/sculptra.html" class="sub-item"><span class="sub-name">Sculptra 舒顏萃</span></a>
               </div>
 
               <div class="sub-category-pane" id="pane-ha">
-                <a href="#belotero" class="sub-item"><span class="sub-name">Belotero 保柔緹</span></a>
-                <a href="#teosane" class="sub-item"><span class="sub-name">Teoxane 緹奧希</span></a>
-                <a href="#juvederm" class="sub-item"><span class="sub-name">Juvederm喬雅登</span></a>
-                <a href="#dermafiller" class="sub-item"><span class="sub-name">Dermafiller 德瑪芙</span></a>
+                <a href="treatments/belotero.html" class="sub-item"><span class="sub-name">Belotero 保柔緹</span></a>
+                <a href="treatments/teosane.html" class="sub-item"><span class="sub-name">Teoxane 緹奧希</span></a>
+                <a href="treatments/juvederm.html" class="sub-item"><span class="sub-name">Juvederm喬雅登</span></a>
+                <a href="treatments/dermafiller.html" class="sub-item"><span class="sub-name">Dermafiller 德瑪芙</span></a>
               </div>
 
               <div class="sub-category-pane" id="pane-advanced">
-                <a href="#sunmax" class="sub-item"><span class="sub-name">Sunmax 熊貓針</span></a>
-                <a href="#ronkyla" class="sub-item"><span class="sub-name">Ronkyla 容脂針</span></a>
-                <a href="#belotero-soft" class="sub-item"><span class="sub-name">Belotero 素妍針</span></a>
+                <a href="treatments/sunmax.html" class="sub-item"><span class="sub-name">Sunmax 熊貓針</span></a>
+                <a href="treatments/ronkyla.html" class="sub-item"><span class="sub-name">Ronkyla 容脂針</span></a>
+                <a href="treatments/belotero-soft.html" class="sub-item"><span class="sub-name">Belotero 素妍針</span></a>
               </div>
 
             </div>
@@ -731,6 +735,8 @@
         <p class="section-note">由專業的醫師群，共同規劃每一份療程方案。（左右滑動可查看更多醫師）</p>
       </div>
 
+      <h3 style="font-family:var(--serif); font-size:18px; font-weight:600; margin-bottom:20px; color:var(--gold-deep); letter-spacing:0.04em;">台中・文心館</h3>
+
       <div class="team-slider reveal">
 
         <div class="team-card">
@@ -840,6 +846,108 @@
               中山醫學大學醫學士</p>
               <p style="margin-top: 8px;"><strong>【專長】</strong><br>
               NeoFilera妮芙蕾、Meteora美特拉線雕、提奧希玻尿酸、AestheFill艾麗斯、MINT Lift秘特拉提線、Cleviel V50、逆時針原廠認證醫師</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <h3 style="font-family:var(--serif); font-size:18px; font-weight:600; margin:48px 0 20px; color:var(--gold-deep); letter-spacing:0.04em;">台北・復興館</h3>
+
+      <div class="team-slider reveal">
+
+        <div class="team-card">
+          <div class="photo-block" style="display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-size:13px; letter-spacing:0.08em;">醫師照片預留</div>
+          <div style="margin-top: 16px;">
+            <div class="team-name">醫師姓名（待補）</div>
+            <div class="team-role">台北復興店</div>
+            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--ink-soft);">
+              <p><strong>【學經歷】</strong><br>待補充</p>
+              <p style="margin-top: 8px;"><strong>【專長】</strong><br>待補充</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="photo-block" style="display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-size:13px; letter-spacing:0.08em;">醫師照片預留</div>
+          <div style="margin-top: 16px;">
+            <div class="team-name">醫師姓名（待補）</div>
+            <div class="team-role">台北復興店</div>
+            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--ink-soft);">
+              <p><strong>【學經歷】</strong><br>待補充</p>
+              <p style="margin-top: 8px;"><strong>【專長】</strong><br>待補充</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="photo-block" style="display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-size:13px; letter-spacing:0.08em;">醫師照片預留</div>
+          <div style="margin-top: 16px;">
+            <div class="team-name">醫師姓名（待補）</div>
+            <div class="team-role">台北復興店</div>
+            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--ink-soft);">
+              <p><strong>【學經歷】</strong><br>待補充</p>
+              <p style="margin-top: 8px;"><strong>【專長】</strong><br>待補充</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="photo-block" style="display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-size:13px; letter-spacing:0.08em;">醫師照片預留</div>
+          <div style="margin-top: 16px;">
+            <div class="team-name">醫師姓名（待補）</div>
+            <div class="team-role">台北復興店</div>
+            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--ink-soft);">
+              <p><strong>【學經歷】</strong><br>待補充</p>
+              <p style="margin-top: 8px;"><strong>【專長】</strong><br>待補充</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="photo-block" style="display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-size:13px; letter-spacing:0.08em;">醫師照片預留</div>
+          <div style="margin-top: 16px;">
+            <div class="team-name">醫師姓名（待補）</div>
+            <div class="team-role">台北復興店</div>
+            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--ink-soft);">
+              <p><strong>【學經歷】</strong><br>待補充</p>
+              <p style="margin-top: 8px;"><strong>【專長】</strong><br>待補充</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="photo-block" style="display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-size:13px; letter-spacing:0.08em;">醫師照片預留</div>
+          <div style="margin-top: 16px;">
+            <div class="team-name">醫師姓名（待補）</div>
+            <div class="team-role">台北復興店</div>
+            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--ink-soft);">
+              <p><strong>【學經歷】</strong><br>待補充</p>
+              <p style="margin-top: 8px;"><strong>【專長】</strong><br>待補充</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="photo-block" style="display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-size:13px; letter-spacing:0.08em;">醫師照片預留</div>
+          <div style="margin-top: 16px;">
+            <div class="team-name">醫師姓名（待補）</div>
+            <div class="team-role">台北復興店</div>
+            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--ink-soft);">
+              <p><strong>【學經歷】</strong><br>待補充</p>
+              <p style="margin-top: 8px;"><strong>【專長】</strong><br>待補充</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="photo-block" style="display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-size:13px; letter-spacing:0.08em;">醫師照片預留</div>
+          <div style="margin-top: 16px;">
+            <div class="team-name">醫師姓名（待補）</div>
+            <div class="team-role">台北復興店</div>
+            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--ink-soft);">
+              <p><strong>【學經歷】</strong><br>待補充</p>
+              <p style="margin-top: 8px;"><strong>【專長】</strong><br>待補充</p>
             </div>
           </div>
         </div>
