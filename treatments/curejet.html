@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CUREJET酷捷｜曜診所 Flos Clinic</title>
+<style>
+  :root{
+    --ink:#F1EADC; --ink-soft:#C0C8C8; --paper:#132728; --paper-deep:#2B3C3C;
+    --line:#445150; --gold:#FBFDFD; --gold-deep:#C0C8C8; --white:#445150;
+    --serif:"Noto Serif TC","Songti TC",serif; --sans:"Noto Sans TC","PingFang TC",sans-serif;
+    --maxw:900px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{ font-family:var(--sans); background:var(--paper); color:var(--ink); line-height:1.9; }
+  a{ color:inherit; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 32px; }
+  header{ padding:28px 0; border-bottom:1px solid var(--line); }
+  .back-link{ font-size:13px; letter-spacing:0.08em; color:var(--ink-soft); text-decoration:none; }
+  .back-link:hover{ color:var(--gold); }
+  main{ padding:64px 0 100px; }
+  .eyebrow{ font-size:12.5px; letter-spacing:0.3em; color:var(--gold-deep); margin-bottom:18px; }
+  h1{ font-family:var(--serif); font-size:clamp(30px,4vw,46px); font-weight:600; max-width:640px; }
+  .lede{ margin-top:22px; color:var(--ink-soft); font-size:16.5px; max-width:560px; }
+  .info-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:56px; }
+  .info-cell{ background:var(--paper-deep); padding:26px 24px; }
+  .info-cell b{ display:block; font-size:12px; letter-spacing:0.1em; color:var(--gold-deep); margin-bottom:8px; }
+  .body-copy{ margin-top:56px; max-width:620px; color:var(--ink-soft); font-size:15.5px; }
+  .body-copy h2{ font-family:var(--serif); color:var(--ink); font-size:22px; margin:36px 0 14px; font-weight:600; }
+  .placeholder{ color:var(--line); font-style:italic; }
+  .cta{ margin-top:56px; }
+  .cta-btn{ display:inline-block; border:1px solid var(--ink); padding:12px 26px; border-radius:999px; font-size:13.5px; letter-spacing:0.08em; text-decoration:none; }
+  .cta-btn:hover{ background:var(--ink); color:var(--white); }
+  @media (max-width:700px){ .info-grid{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="../index.html#treatments" class="back-link">← 返回療程項目</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="eyebrow">肌膚管理 · TREATMENT</div>
+    <h1>CUREJET酷捷</h1>
+    <p class="lede placeholder">（請填入這項療程的簡短介紹文字，說明適用問題與主要效果）</p>
+
+    <div class="info-grid">
+      <div class="info-cell"><b>療程時間</b><span class="placeholder">待補</span></div>
+      <div class="info-cell"><b>恢復期</b><span class="placeholder">待補</span></div>
+      <div class="info-cell"><b>建議頻率</b><span class="placeholder">待補</span></div>
+    </div>
+
+    <div class="body-copy">
+      <h2>適合對象</h2>
+      <p class="placeholder">（請填入適合施打／使用這項療程的族群與膚況說明）</p>
+      <h2>療程流程</h2>
+      <p class="placeholder">（請填入實際療程流程說明）</p>
+      <h2>注意事項</h2>
+      <p class="placeholder">（請填入術前術後注意事項，實際狀況以醫師現場評估為主）</p>
+    </div>
+
+    <div class="cta">
+      <a href="../index.html#book" class="cta-btn">預約諮詢</a>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
