@@ -285,6 +285,40 @@
     scrollbar-width: thin;
   }
 
+  /* -------- 醫療團隊：分店清單（naiss 風格參考，改為曜診所的雅致版本） -------- */
+  .team-directory{ display:flex; flex-direction:column; gap:52px; }
+  .team-group-title{
+    font-family: var(--serif); font-size: 15px; font-weight:600;
+    letter-spacing: 0.28em; color: var(--gold-deep); margin-bottom: 6px;
+    padding-bottom: 16px; border-bottom: 1px solid var(--line);
+  }
+  .team-list{ list-style:none; }
+  .team-list li + li{ border-top: 1px solid rgba(255,255,255,0.06); }
+  .team-list a{
+    display:flex; align-items:center; justify-content:space-between; gap:24px;
+    padding: 20px 4px; text-decoration:none;
+    transition: padding-left .35s cubic-bezier(.65,0,.35,1);
+  }
+  .team-list a:hover{ padding-left: 10px; }
+  .team-name{
+    font-family: var(--serif); font-size: 19px; font-weight:600; color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+  .team-tag{
+    flex: 1; text-align:right; margin-right: 8px;
+    font-size: 12px; letter-spacing: 0.1em; color: var(--ink-soft);
+  }
+  .team-arrow{
+    font-size: 15px; color: var(--gold-deep); flex-shrink:0;
+    transition: transform .35s cubic-bezier(.65,0,.35,1), color .3s ease;
+  }
+  .team-list a:hover .team-arrow{ transform: translateX(6px); color: var(--gold); }
+  .team-list a:hover .team-name{ color: var(--gold); }
+  @media (max-width:600px){
+    .team-list a{ flex-wrap:wrap; }
+    .team-tag{ text-align:left; flex:none; order:3; width:100%; margin-top:4px; margin-right:0; }
+  }
+
   /* ==================================================================
      導覽列下拉選單（桌機：hover 大選單／手機：點擊展開手風琴）
      ================================================================== */
@@ -765,224 +799,44 @@
           <div class="kicker"><span class="num">03</span>MEDICAL TEAM</div>
           <h2 class="title">醫療團隊</h2>
         </div>
-        <p class="section-note">由專業的醫師群，共同規劃每一份療程方案。（左右滑動可查看更多醫師）</p>
+        <p class="section-note">由專業的醫師群，共同規劃每一份療程方案。點選姓名查看完整學經歷。</p>
       </div>
 
-      <h3 style="font-family:var(--serif); font-size:18px; font-weight:600; margin-bottom:20px; color:var(--gold-deep); letter-spacing:0.04em;">台中・文心館</h3>
+      <div class="team-directory reveal">
 
-      <div class="team-slider reveal">
-
-        <div class="team-card">
-          <div class="photo-block" style="overflow: hidden; border-radius: 4px;">
-            <img src="鍾曜任醫師.avif" alt="鍾曜任醫師" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-          </div>
-          <div style="margin-top: 16px;">
-            <div class="team-name">鍾曜任醫師</div>
-            <div class="team-role">復興店・文心店</div>
-            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--text-secondary);">
-              <p><strong>【學經歷】</strong><br>
-              國立陽明交通大學醫學系畢<br>
-              台北榮民總醫院訓練／台北市聯合醫院不分科住院醫師<br>
-              台北市立聯合醫院松德院區訓練<br>
-              亞東醫院家庭醫學科住院醫師、總醫師<br>
-              台灣家庭醫學醫學會專科醫師<br>
-              台灣臨床TMS腦刺激學會會員<br>
-              台灣肥胖醫學會會員／台灣運動營養學會會員</p>
-              <p style="margin-top: 8px;"><strong>【專長】</strong><br>
-              得美微針筆處理痘疤、落髮等問題、減重＆體態控制、全身雕塑、電波及音波拉提、半永久雷射除毛、膚況改善雷射、肉毒桿菌</p>
-            </div>
-          </div>
+        <div class="team-group">
+          <h3 class="team-group-title">復興店</h3>
+          <ul class="team-list">
+            <li><a href="doctors/dr-chung-yao-ren.html"><span class="team-name">鍾曜任醫師</span><span class="team-tag">復興・敦化・文心</span><span class="team-arrow">→</span></a></li>
+            <li><a href="doctors/dr-lin-si-yu.html"><span class="team-name">林思宇醫師</span><span class="team-tag">復興</span><span class="team-arrow">→</span></a></li>
+            <li><a href="doctors/dr-tsai-ping-huang.html"><span class="team-name">蔡秉遑醫師</span><span class="team-tag">復興</span><span class="team-arrow">→</span></a></li>
+            <li><a href="doctors/dr-long-qin-li.html"><span class="team-name">龍勤莉醫師</span><span class="team-tag">復興</span><span class="team-arrow">→</span></a></li>
+            <li><a href="doctors/dr-shen-meng-han.html"><span class="team-name">沈孟暵醫師</span><span class="team-tag">復興</span><span class="team-arrow">→</span></a></li>
+            <li><a href="doctors/dr-wang-xuan-ning.html"><span class="team-name">王宣甯醫師</span><span class="team-tag">復興</span><span class="team-arrow">→</span></a></li>
+            <li><a href="doctors/dr-yang-jun-he.html"><span class="team-name">楊鈞賀醫師</span><span class="team-tag">復興・敦化</span><span class="team-arrow">→</span></a></li>
+            <li><a href="doctors/nutritionist-wang-zheng-wei.html"><span class="team-name">王證偉營養師</span><span class="team-tag">復興・敦化</span><span class="team-arrow">→</span></a></li>
+          </ul>
         </div>
 
-        <div class="team-card">
-          <div class="photo-block" style="overflow: hidden; border-radius: 4px;">
-            <img src="王晨宇醫師.avif" alt="王晨宇醫師" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-          </div>
-          <div style="margin-top: 16px;">
-            <div class="team-name">王晨宇醫師</div>
-            <div class="team-role">文心店</div>
-            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--text-secondary);">
-              <p><strong>【學經歷】</strong><br>
-              長庚大學醫學系畢業｜中華民國衛福部定專科醫師執照<br>
-              林口長庚醫院、童綜合醫院高級健檢中心主治醫師<br>
-              安妞美學診所／星和診所主治醫師<br>
-              糖尿病共通照護網／職業醫學勞工體格與健康檢查合格認證專科醫師</p>
-              <p style="margin-top: 8px;"><strong>【專長】</strong><br>
-              精準肉毒注射與輪廓調整、電波與音波緊緻拉提、客製化水光注射與肌膚養護、雷射光療與膚色管理、臉頸輪廓與非侵入式體態雕塑（Onda Pro、冷凍減脂等）、全身各部位除毛</p>
-            </div>
-          </div>
+        <div class="team-group">
+          <h3 class="team-group-title">敦化店</h3>
+          <ul class="team-list">
+            <li><a href="doctors/dr-li-jia-lun.html"><span class="team-name">李嘉倫醫師</span><span class="team-tag">敦化</span><span class="team-arrow">→</span></a></li>
+            <li><a href="doctors/dr-zheng-rui-de.html"><span class="team-name">鄭瑞德醫師</span><span class="team-tag">敦化</span><span class="team-arrow">→</span></a></li>
+            <li><a href="doctors/dr-lin-yan-ze.html"><span class="team-name">林硯澤醫師</span><span class="team-tag">敦化</span><span class="team-arrow">→</span></a></li>
+            <li><a href="doctors/dr-zhou-bai-xun.html"><span class="team-name">周柏勳醫師</span><span class="team-tag">敦化</span><span class="team-arrow">→</span></a></li>
+          </ul>
         </div>
 
-        <div class="team-card">
-          <div class="photo-block" style="overflow: hidden; border-radius: 4px;">
-            <img src="張涵清醫師.avif" alt="張涵清醫師" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-          </div>
-          <div style="margin-top: 16px;">
-            <div class="team-name">張涵清醫師</div>
-            <div class="team-role">文心店</div>
-            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--text-secondary);">
-              <p><strong>【學經歷】</strong><br>
-              中國醫藥大學醫學系畢業<br>
-              台中榮民總醫院 家醫部住院醫師<br>
-              微整形美容醫學會會員</p>
-              <p style="margin-top: 8px;"><strong>【專長】</strong><br>
-              Botox保妥適、Nabota、V50玻尿酸、Ellanse、PLT、MINT神力拉提、鳳凰電波、海芙音波等原廠認證與研習醫師</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="photo-block" style="overflow: hidden; border-radius: 4px;">
-            <img src="張晉慈醫師.avif" alt="張晉慈醫師" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-          </div>
-          <div style="margin-top: 16px;">
-            <div class="team-name">張晉慈醫師</div>
-            <div class="team-role">文心店</div>
-            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--text-secondary);">
-              <p><strong>【學經歷】</strong><br>
-              中山醫學大學醫學系畢｜台中榮總一般科住院醫師<br>
-              台灣微整形美容醫學會會員｜中華民國美容醫學醫學會會員</p>
-              <p style="margin-top: 8px;"><strong>【專長】</strong><br>
-              電音波緊緻拉提、肉毒桿菌注射、全臉評估精雕、精緻鼻雕、臉部埋線拉提，以及海芙音波、蝴蝶電波、玩美電波、舒顏萃、逆時針等多項原廠認證醫師及雙美膠原蛋白國際培訓講師</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="photo-block" style="overflow: hidden; border-radius: 4px;">
-            <img src="鍾念庭醫師.avif" alt="鍾念庭醫師" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-          </div>
-          <div style="margin-top: 16px;">
-            <div class="team-name">鍾念庭醫師</div>
-            <div class="team-role">文心店</div>
-            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--text-secondary);">
-              <p><strong>【學經歷】</strong><br>
-              中山醫學大學醫學系畢業｜臺中榮總家醫部主治醫師、總醫師、住院醫師<br>
-              臺中榮總減重中心／健康管理中心主治醫師<br>
-              微整形美容醫學會會員</p>
-              <p style="margin-top: 8px;"><strong>【專長】</strong><br>
-              家庭醫學科專科醫師、中華民國肥胖研究學會專科醫師<br>
-              肥胖症與體重管理、慢性病管理、健康管理與諮詢、骨質疏鬆、旅遊醫學與戒菸治療</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="photo-block" style="overflow: hidden; border-radius: 4px;">
-            <img src="林志宇醫師.avif" alt="林志宇醫師" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-          </div>
-          <div style="margin-top: 16px;">
-            <div class="team-name">林志宇醫師</div>
-            <div class="team-role">文心店</div>
-            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--text-secondary);">
-              <p><strong>【學經歷】</strong><br>
-              中山醫學大學醫學士</p>
-              <p style="margin-top: 8px;"><strong>【專長】</strong><br>
-              NeoFilera妮芙蕾、Meteora美特拉線雕、提奧希玻尿酸、AestheFill艾麗斯、MINT Lift秘特拉提線、Cleviel V50、逆時針原廠認證醫師</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <h3 style="font-family:var(--serif); font-size:18px; font-weight:600; margin:48px 0 20px; color:var(--gold-deep); letter-spacing:0.04em;">台北・復興館</h3>
-
-      <div class="team-slider reveal">
-
-        <div class="team-card">
-          <div class="photo-block" style="display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-size:13px; letter-spacing:0.08em;">醫師照片預留</div>
-          <div style="margin-top: 16px;">
-            <div class="team-name">醫師姓名（待補）</div>
-            <div class="team-role">台北復興店</div>
-            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--ink-soft);">
-              <p><strong>【學經歷】</strong><br>待補充</p>
-              <p style="margin-top: 8px;"><strong>【專長】</strong><br>待補充</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="photo-block" style="display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-size:13px; letter-spacing:0.08em;">醫師照片預留</div>
-          <div style="margin-top: 16px;">
-            <div class="team-name">醫師姓名（待補）</div>
-            <div class="team-role">台北復興店</div>
-            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--ink-soft);">
-              <p><strong>【學經歷】</strong><br>待補充</p>
-              <p style="margin-top: 8px;"><strong>【專長】</strong><br>待補充</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="photo-block" style="display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-size:13px; letter-spacing:0.08em;">醫師照片預留</div>
-          <div style="margin-top: 16px;">
-            <div class="team-name">醫師姓名（待補）</div>
-            <div class="team-role">台北復興店</div>
-            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--ink-soft);">
-              <p><strong>【學經歷】</strong><br>待補充</p>
-              <p style="margin-top: 8px;"><strong>【專長】</strong><br>待補充</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="photo-block" style="display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-size:13px; letter-spacing:0.08em;">醫師照片預留</div>
-          <div style="margin-top: 16px;">
-            <div class="team-name">醫師姓名（待補）</div>
-            <div class="team-role">台北復興店</div>
-            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--ink-soft);">
-              <p><strong>【學經歷】</strong><br>待補充</p>
-              <p style="margin-top: 8px;"><strong>【專長】</strong><br>待補充</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="photo-block" style="display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-size:13px; letter-spacing:0.08em;">醫師照片預留</div>
-          <div style="margin-top: 16px;">
-            <div class="team-name">醫師姓名（待補）</div>
-            <div class="team-role">台北復興店</div>
-            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--ink-soft);">
-              <p><strong>【學經歷】</strong><br>待補充</p>
-              <p style="margin-top: 8px;"><strong>【專長】</strong><br>待補充</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="photo-block" style="display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-size:13px; letter-spacing:0.08em;">醫師照片預留</div>
-          <div style="margin-top: 16px;">
-            <div class="team-name">醫師姓名（待補）</div>
-            <div class="team-role">台北復興店</div>
-            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--ink-soft);">
-              <p><strong>【學經歷】</strong><br>待補充</p>
-              <p style="margin-top: 8px;"><strong>【專長】</strong><br>待補充</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="photo-block" style="display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-size:13px; letter-spacing:0.08em;">醫師照片預留</div>
-          <div style="margin-top: 16px;">
-            <div class="team-name">醫師姓名（待補）</div>
-            <div class="team-role">台北復興店</div>
-            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--ink-soft);">
-              <p><strong>【學經歷】</strong><br>待補充</p>
-              <p style="margin-top: 8px;"><strong>【專長】</strong><br>待補充</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="photo-block" style="display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-size:13px; letter-spacing:0.08em;">醫師照片預留</div>
-          <div style="margin-top: 16px;">
-            <div class="team-name">醫師姓名（待補）</div>
-            <div class="team-role">台北復興店</div>
-            <div class="team-detail-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--ink-soft);">
-              <p><strong>【學經歷】</strong><br>待補充</p>
-              <p style="margin-top: 8px;"><strong>【專長】</strong><br>待補充</p>
-            </div>
-          </div>
+        <div class="team-group">
+          <h3 class="team-group-title">文心店</h3>
+          <ul class="team-list">
+            <li><a href="doctors/dr-zhong-nian-ting.html"><span class="team-name">鍾念庭醫師</span><span class="team-tag">文心</span><span class="team-arrow">→</span></a></li>
+            <li><a href="doctors/dr-zhang-jin-ci.html"><span class="team-name">張晉慈醫師</span><span class="team-tag">文心</span><span class="team-arrow">→</span></a></li>
+            <li><a href="doctors/dr-lin-zhi-yu.html"><span class="team-name">林志宇醫師</span><span class="team-tag">文心</span><span class="team-arrow">→</span></a></li>
+            <li><a href="doctors/dr-wang-chen-yu.html"><span class="team-name">王晨宇醫師</span><span class="team-tag">文心</span><span class="team-arrow">→</span></a></li>
+            <li><a href="doctors/dr-zhang-de-quan.html"><span class="team-name">張德全醫師</span><span class="team-tag">文心</span><span class="team-arrow">→</span></a></li>
+          </ul>
         </div>
 
       </div>
