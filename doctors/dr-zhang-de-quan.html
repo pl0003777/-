@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>張德全醫師｜曜診所 Flos Clinic</title>
+<style>
+  :root{
+    --ink:#1E2B27; --ink-soft:#5C6B66; --paper:#FBFCFA; --paper-deep:#F0F2ED;
+    --line:#DFE4DD; --accent:#1F3330; --accent-soft:#4A5C56; --white:#FFFFFF;
+    --serif:"Noto Serif TC","Songti TC",serif; --sans:"Noto Sans TC","PingFang TC",sans-serif;
+    --maxw:880px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{ font-family:var(--sans); background:var(--paper); color:var(--ink); line-height:1.9; }
+  a{ color:inherit; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 32px; }
+  header{ padding:26px 0; border-bottom:1px solid var(--line); background:var(--white); }
+  .back-link{ font-size:13px; letter-spacing:0.08em; color:var(--ink-soft); text-decoration:none; }
+  .back-link:hover{ color:var(--accent); }
+  main{ padding:64px 0 100px; }
+  .profile-head{ display:flex; gap:40px; align-items:flex-start; flex-wrap:wrap; }
+  .photo-block{
+    width:210px; height:230px; flex-shrink:0; border-radius:4px; position:relative; overflow:hidden;
+    background: var(--paper-deep);
+    border:1px solid var(--line);
+  }
+  .photo-block .photo-bg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1; }
+  .photo-block .photo-portrait{ position:relative; z-index:2; width:100%; height:100%; object-fit:contain; padding:14px; box-sizing:border-box; }
+  .eyebrow{ font-size:12px; letter-spacing:0.3em; color:var(--accent-soft); margin-bottom:14px; }
+  h1{ font-family:var(--serif); font-size:clamp(28px,3.6vw,38px); font-weight:600; color:var(--ink); }
+  .branch-tags{ margin-top:16px; display:flex; gap:8px; flex-wrap:wrap; }
+  .branch-tag{ display:inline-block; padding:6px 14px; border:1px solid var(--accent-soft); border-radius:999px; font-size:12.5px; color:var(--accent-soft); letter-spacing:0.04em; }
+  .body-copy{ margin-top:56px; max-width:640px; color:var(--ink-soft); font-size:15.5px; }
+  .body-copy h2{ font-family:var(--serif); color:var(--ink); font-size:19px; margin:36px 0 16px; font-weight:600; }
+  .plain-list{ margin:0 0 0 20px; }
+  .plain-list li{ margin-bottom:8px; }
+  .btn-group{ display:flex; flex-wrap:wrap; gap:10px; }
+  .spec-btn{
+    display:inline-flex; align-items:center; gap:6px;
+    padding:9px 16px; border:1px solid var(--accent); border-radius:999px;
+    font-size:13.5px; color:var(--accent); text-decoration:none;
+    transition: background .25s ease, color .25s ease;
+  }
+  .spec-btn:hover{ background:var(--accent); color:var(--white); }
+  .spec-btn::after{ content:"→"; font-size:12px; }
+  .spec-plain{
+    display:inline-flex; padding:9px 16px; border:1px solid var(--line); border-radius:999px;
+    font-size:13.5px; color:var(--ink-soft);
+  }
+  .note{ margin-top:56px; padding:20px 22px; background:var(--paper-deep); border-left:3px solid var(--accent-soft); font-size:13px; color:var(--ink-soft); line-height:1.8; }
+  .cta{ margin-top:48px; }
+  .cta-btn{ display:inline-block; background:var(--accent); color:var(--white); padding:13px 28px; border-radius:999px; font-size:13.5px; letter-spacing:0.08em; text-decoration:none; }
+  .cta-btn:hover{ background:var(--accent-soft); }
+  @media (max-width:600px){ .profile-head{ flex-direction:column; } .photo-block{ width:100%; height:260px; } }
+
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="../team.html" class="back-link">← 返回醫療團隊</a></div></header>
+<main>
+  <div class="wrap">
+    <div class="profile-head">
+      <div class="photo-block"><img class="photo-bg" src="../MD_Photos/醫師純灰底.png" alt=""><img class="photo-portrait" src="../MD_Photos/張德全醫師.png" alt="張德全醫師"></div>
+      <div>
+        <div class="eyebrow">MEDICAL TEAM</div>
+        <h1>張德全醫師</h1>
+        <div class="branch-tags"><span class="branch-tag">台中-文心館</span></div>
+      </div>
+    </div>
+
+    <div class="body-copy">
+      <h2>學經歷</h2>
+      <ul class="plain-list">
+        <li>中國醫藥大學系畢業</li>
+        <li>光田綜合醫院住院醫師</li>
+        <li>微整形學會會員</li>
+      </ul>
+      <h2>專長</h2>
+      <div class="btn-group">
+        <span class="spec-plain">Thermage FLX美國鳳凰電波原廠認證醫師</span>
+        <span class="spec-plain">洢蓮絲膠原蛋白增生劑、逆時針玻尿酸原廠認證醫師</span>
+        <span class="spec-plain">美特拉線雕原廠認證醫師</span>
+        <a href="../treatments/radiesse.html" class="spec-btn">Radiesse再生型膠原蛋白增生劑、NeoFilera妮芙蕾原廠認證醫師</a>
+        <span class="spec-plain">PLT女性私密處治療、PLT肝斑治療培訓醫師</span>
+        <span class="spec-plain">Revolax拉芙麗、Restylane瑞絲郎玻尿酸原廠認證醫師</span>
+        <a href="../treatments/onda.html" class="spec-btn">BOTOX美國保妥適肉毒、ONDA PRO超微波原廠認證醫師</a>
+      </div>
+    </div>
+
+    <div class="note">本頁學經歷與專長資訊由診所提供，僅供衛教與團隊介紹用途，實際療程建議請以醫師現場評估為準。</div>
+    <div class="cta"><a href="../index.html#book" class="cta-btn">預約諮詢</a></div>
+  </div>
+</main>
+</body>
+</html>
