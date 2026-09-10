@@ -336,6 +336,8 @@
   .arrow-mobile{ display:none; }
   .mobile-subpanel{ display:none; }
 
+  .category-label{ font-family: var(--serif); letter-spacing: 0.03em; }
+
   .mega-content { width: 55%; display: flex; flex-direction: column; justify-content: flex-start; }
   .sub-category-pane { display: none; }
   .sub-category-pane.active { display: flex; flex-direction: column; gap: 14px; }
@@ -391,32 +393,41 @@
     .mega-sidebar { width: 100%; border-right: none; border-bottom: none; padding-right: 0; padding-bottom: 0; }
     .mega-content { display: none; } /* 手機版改用各分類自己底下的展開區塊，不用共用內容欄 */
 
-    .category-list { display: flex; flex-direction: column; gap: 2px; }
+    .category-list { display: flex; flex-direction: column; }
+    .category-list .category-item + .category-item { border-top: 1px solid rgba(255,255,255,0.08); }
     .category-item.active { background: none; color: #111; } /* 桌機用的預設 active 樣式，手機不套用 */
-    .category-item.mobile-open { background-color: #112220; color: #fff; }
+    .category-item.mobile-open { background: none; color: var(--gold); }
+    .category-toggle{ padding: 15px 4px; }
 
     .arrow-desktop{ display: none; }
     .arrow-mobile{
       display: inline-block; margin-left: 8px; flex-shrink: 0;
-      transition: transform .25s ease;
+      font-size: 13px; color: var(--gold-deep);
+      transition: transform .5s cubic-bezier(.65,0,.35,1);
     }
-    .category-item.mobile-open .arrow-mobile{ transform: rotate(180deg); }
+    .category-item.mobile-open .arrow-mobile{ transform: rotate(180deg); color: var(--gold); }
 
-    .category-item.mobile-open > .mobile-subpanel {
-      display: flex; flex-direction: column; gap: 2px;
-      background: var(--paper-deep);
-      border-left: 3px solid var(--gold-deep);
-      padding: 6px 14px;
-      margin: 2px 0 6px;
-      border-radius: 0 0 4px 4px;
+    .mobile-subpanel{
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows .5s cubic-bezier(.65,0,.35,1);
+    }
+    .category-item.mobile-open > .mobile-subpanel{ grid-template-rows: 1fr; }
+    .mobile-subpanel-inner{
+      overflow: hidden; min-height: 0;
+      display: flex; flex-direction: column;
+      padding-left: 4px;
+      border-left: 1px solid rgba(251,253,253,0.14);
+      margin: 0 0 0 14px;
     }
     .mobile-subpanel .sub-item {
-      padding: 10px 4px;
-      font-size: 14.5px;
-      color: var(--ink);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 11px 4px 11px 16px;
+      font-size: 13.5px;
+      letter-spacing: 0.04em;
+      color: var(--ink-soft);
+      transition: color .3s ease, padding-left .3s ease;
     }
-    .mobile-subpanel .sub-item:last-child{ border-bottom: none; }
+    .mobile-subpanel .sub-item:hover{ color: var(--gold); padding-left: 20px; }
   }
 </style>
 </head>
@@ -446,13 +457,16 @@
                     <span class="arrow-mobile" aria-hidden="true">▾</span>
                   </button>
                   <div class="mobile-subpanel">
+                    <div class="mobile-subpanel-inner">
                     <a href="treatments/dermapen.html" class="sub-item">Dermapen得美微針筆</a>
+                    <a href="treatments/dermashine.html" class="sub-item">DermaShine德瑪莎水光</a>
                     <a href="treatments/syndeo.html" class="sub-item">Syndeo海菲秀</a>
                     <a href="treatments/emfusion.html" class="sub-item">Emfusion</a>
                     <a href="treatments/jetpeel.html" class="sub-item">JetPeel潔比爾</a>
                     <a href="treatments/seyo.html" class="sub-item">SEYO水光儀</a>
                     <a href="treatments/smartlux.html" class="sub-item">SMARTLUX照光機</a>
                     <a href="treatments/curejet.html" class="sub-item">CUREJET酷捷</a>
+                    </div>
                   </div>
                 </li>
                 <li class="category-item" data-target="body">
@@ -462,12 +476,15 @@
                     <span class="arrow-mobile" aria-hidden="true">▾</span>
                   </button>
                   <div class="mobile-subpanel">
+                    <div class="mobile-subpanel-inner">
                     <a href="treatments/inmode.html" class="sub-item">InMode LIFT鑽石超塑</a>
                     <a href="treatments/embody.html" class="sub-item">EMBODY核心美力</a>
                     <a href="treatments/emsculpt.html" class="sub-item">Emsculpt NEO 熱磁減脂</a>
                     <a href="treatments/indiba.html" class="sub-item">INDIBA英特波</a>
                     <a href="treatments/onda.html" class="sub-item">Onda PRO超微波</a>
+                    <a href="treatments/talent-a.html" class="sub-item">Talent-A動磁波</a>
                     <a href="treatments/winback.html" class="sub-item">Winback</a>
+                    </div>
                   </div>
                 </li>
                 <li class="category-item" data-target="youth">
@@ -477,8 +494,10 @@
                     <span class="arrow-mobile" aria-hidden="true">▾</span>
                   </button>
                   <div class="mobile-subpanel">
+                    <div class="mobile-subpanel-inner">
                     <a href="treatments/iv.html" class="sub-item">營養點滴</a>
                     <a href="treatments/maxwave.html" class="sub-item">Maxwave極限震波</a>
+                    </div>
                   </div>
                 </li>
                 <li class="category-item" data-target="energy">
@@ -488,10 +507,12 @@
                     <span class="arrow-mobile" aria-hidden="true">▾</span>
                   </button>
                   <div class="mobile-subpanel">
+                    <div class="mobile-subpanel-inner">
                     <a href="treatments/density.html" class="sub-item">DENSITY 無雙電波</a>
                     <a href="treatments/mpt.html" class="sub-item">Ultraformer MPT海芙音波媚必提</a>
                     <a href="treatments/ulthera.html" class="sub-item">Ultherapy Prime美國音波 第二代</a>
                     <a href="treatments/potenza.html" class="sub-item">Potenza 無限電波</a>
+                    </div>
                   </div>
                 </li>
                 <li class="category-item" data-target="laser">
@@ -501,8 +522,10 @@
                     <span class="arrow-mobile" aria-hidden="true">▾</span>
                   </button>
                   <div class="mobile-subpanel">
+                    <div class="mobile-subpanel-inner">
                     <a href="treatments/capri.html" class="sub-item">Capri 藍雷射</a>
                     <a href="treatments/discovery.html" class="sub-item">Discovery Pico探索皮秒</a>
+                    </div>
                   </div>
                 </li>
                 <li class="category-item" data-target="botox">
@@ -512,9 +535,11 @@
                     <span class="arrow-mobile" aria-hidden="true">▾</span>
                   </button>
                   <div class="mobile-subpanel">
+                    <div class="mobile-subpanel-inner">
                     <a href="treatments/botox-brand.html" class="sub-item">Botox 保妥適</a>
                     <a href="treatments/xeomin.html" class="sub-item">Xeomin 天使肉毒</a>
                     <a href="treatments/nabota.html" class="sub-item">優力柔(奇肌肉毒)</a>
+                    </div>
                   </div>
                 </li>
                 <li class="category-item" data-target="colloids">
@@ -524,10 +549,12 @@
                     <span class="arrow-mobile" aria-hidden="true">▾</span>
                   </button>
                   <div class="mobile-subpanel">
+                    <div class="mobile-subpanel-inner">
                     <a href="treatments/aesthefill.html" class="sub-item">AestheFill 艾麗斯</a>
                     <a href="treatments/juvelook.html" class="sub-item">Juvelook喬雅露</a>
                     <a href="treatments/radiesse.html" class="sub-item">Radiesse 再生針</a>
                     <a href="treatments/sculptra.html" class="sub-item">Sculptra 舒顏萃</a>
+                    </div>
                   </div>
                 </li>
                 <li class="category-item" data-target="ha">
@@ -537,10 +564,12 @@
                     <span class="arrow-mobile" aria-hidden="true">▾</span>
                   </button>
                   <div class="mobile-subpanel">
+                    <div class="mobile-subpanel-inner">
                     <a href="treatments/belotero.html" class="sub-item">Belotero 保柔緹</a>
                     <a href="treatments/teosane.html" class="sub-item">Teoxane 緹奧希</a>
                     <a href="treatments/juvederm.html" class="sub-item">Juvederm喬雅登</a>
                     <a href="treatments/dermafiller.html" class="sub-item">Dermafiller 德瑪芙</a>
+                    </div>
                   </div>
                 </li>
                 <li class="category-item" data-target="advanced">
@@ -550,9 +579,11 @@
                     <span class="arrow-mobile" aria-hidden="true">▾</span>
                   </button>
                   <div class="mobile-subpanel">
+                    <div class="mobile-subpanel-inner">
                     <a href="treatments/sunmax.html" class="sub-item">Sunmax 熊貓針</a>
                     <a href="treatments/ronkyla.html" class="sub-item">Ronkyla 容脂針</a>
                     <a href="treatments/belotero-soft.html" class="sub-item">Belotero 素妍針</a>
+                    </div>
                   </div>
                 </li>
               </ul>
@@ -563,6 +594,7 @@
 
               <div class="sub-category-pane active" id="pane-skin">
                 <a href="treatments/dermapen.html" class="sub-item"><span class="sub-name">Dermapen得美微針筆</span></a>
+                <a href="treatments/dermashine.html" class="sub-item"><span class="sub-name">DermaShine德瑪莎水光</span></a>
                 <a href="treatments/syndeo.html" class="sub-item"><span class="sub-name">Syndeo海菲秀</span></a>
                 <a href="treatments/emfusion.html" class="sub-item"><span class="sub-name">Emfusion</span></a>
                 <a href="treatments/jetpeel.html" class="sub-item"><span class="sub-name">JetPeel潔比爾</span></a>
@@ -577,6 +609,7 @@
                 <a href="treatments/emsculpt.html" class="sub-item"><span class="sub-name">Emsculpt NEO 熱磁減脂</span></a>
                 <a href="treatments/indiba.html" class="sub-item"><span class="sub-name">INDIBA英特波</span></a>
                 <a href="treatments/onda.html" class="sub-item"><span class="sub-name">Onda PRO超微波</span></a>
+                <a href="treatments/talent-a.html" class="sub-item"><span class="sub-name">Talent-A動磁波</span></a>
                 <a href="treatments/winback.html" class="sub-item"><span class="sub-name">Winback</span></a>
               </div>
 
