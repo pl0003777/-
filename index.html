@@ -1243,8 +1243,10 @@
       });
     }
   });
+</script>
+
 <script>
-  /* -------- 醫療團隊輪播：桌面滾輪平滑慣性橫移 ＋ 手機無限循環拖曳 -------- */
+  /* -------- 醫療團隊輪播：桌面滾輪橫移 ＋ 手機無限循環拖曳 -------- */
   (function () {
     var track = document.querySelector('.doctor-carousel');
     if (!track) return;
@@ -1256,7 +1258,7 @@
     var mobileActive = false;
 
     var position = 0;        // 目前輪播位置（可為小數）
-    var targetPosition = 0;  // 目標位置
+    var targetPosition = 0;  // 停止後要吸附到的整數位置
     var dragging = false, moved = false;
     var startX = 0, startPos = 0, lastX = 0, lastT = 0, velocity = 0;
     var raf = null;
@@ -1295,8 +1297,7 @@
         raf = null;
         return;
       }
-      // 調整 0.1 係數可以改變滑動的滑順/跟手程度（數字越小越溫柔緩慢、越大越跟手）
-      position += diff * 0.1; 
+      position += diff * 0.22;
       render();
       raf = requestAnimationFrame(settle);
     }
@@ -1386,42 +1387,12 @@
     });
     handleModeChange();
 
-    /* 桌面版：滑鼠滾輪平滑慣性橫移（優雅飄移感） */
-    var wheelTarget = 0;
-    var wheelRaf = null;
-
-    function smoothWheelSettle() {
-      var diff = wheelTarget - track.scrollLeft;
-      if (Math.abs(diff) < 0.5) {
-        track.scrollLeft = wheelTarget;
-        wheelRaf = null;
-        return;
-      }
-      // 係數 0.08 讓滾動帶有優雅的緩衝和漸漸煞車的物理慣性
-      track.scrollLeft += diff * 0.08;
-      wheelRaf = requestAnimationFrame(smoothWheelSettle);
-    }
-
+    /* 桌面版：滑鼠滾輪垂直位移 → 橫向捲動，取代拖拉條 */
     track.addEventListener('wheel', function (e) {
       if (mobileActive) return;
       if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
       e.preventDefault();
-
-      if (!wheelRaf) {
-        wheelTarget = track.scrollLeft;
-      }
-      
-      // 累積滾輪的位移量，並限制最大單次推力避免暴衝
-      var delta = e.deltaY * 1.5;
-      wheelTarget += delta;
-      
-      // 確保不會滾出邊界
-      var maxScroll = track.scrollWidth - track.clientWidth;
-      wheelTarget = Math.max(0, Math.min(wheelTarget, maxScroll));
-
-      if (!wheelRaf) {
-        wheelRaf = requestAnimationFrame(smoothWheelSettle);
-      }
+      track.scrollLeft += e.deltaY;
     }, { passive: false });
   })();
 </script>
